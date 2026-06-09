@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"require\\('./bets.js'\\); console.log\\('bets.js parses, BETS length:', \\(eval\\(require\\('fs'\\).readFileSync\\('./bets.js','utf8'\\) + '; BETS.length'\\)\\)\\)\")"
+    ]
+  }
+}

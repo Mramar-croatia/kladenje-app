@@ -1,0 +1,13 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/results"
+  to = "/.netlify/functions/get-results"
+  status = 200
+
+[[redirects]]
+  from = "/api/result"
+  to = "/.netlify/functions/set-result"
+  status = 200
