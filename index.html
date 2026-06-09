@@ -373,6 +373,7 @@
 <script>
 (function () {
   const AUTH_KEY = 'kp2026_auth';
+  const TOKEN_KEY = 'kp2026_token';
   const EXCLUDED = new Set(['grupa', 'datum', 'tim1', 'tim2']);
 
   // Derive players dynamically from first BETS entry (per requirements).
@@ -381,8 +382,15 @@
   function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
 
   function getAuth() { return sessionStorage.getItem(AUTH_KEY); }
-  function setAuth(v) { sessionStorage.setItem(AUTH_KEY, v); }
-  function clearAuth() { sessionStorage.removeItem(AUTH_KEY); }
+  function setAuth(role, token) {
+    sessionStorage.setItem(AUTH_KEY, role);
+    sessionStorage.setItem(TOKEN_KEY, token);
+  }
+  function getToken() { return sessionStorage.getItem(TOKEN_KEY); }
+  function clearAuth() {
+    sessionStorage.removeItem(AUTH_KEY);
+    sessionStorage.removeItem(TOKEN_KEY);
+  }
 
   // ----- Auth -----
   const VIEWER_PWD = 'Lobel';
@@ -402,11 +410,11 @@
     const v = document.getElementById('auth-pwd').value;
     const err = document.getElementById('auth-err');
     if (v === ADMIN_PWD) {
-      setAuth('admin');
+      setAuth('admin', v);
       err.textContent = '';
       init();
     } else if (v === VIEWER_PWD) {
-      setAuth('viewer');
+      setAuth('viewer', v);
       err.textContent = '';
       init();
     } else {
@@ -459,7 +467,7 @@
 
   // ----- API -----
   async function fetchResults() {
-    const token = getAuth();
+    const token = getToken();
     const res = await fetch('/api/results', {
       headers: { 'Authorization': 'Bearer ' + token },
     });
@@ -473,7 +481,7 @@
   }
 
   async function saveResult(matchIndex, rezultat) {
-    const token = getAuth();
+    const token = getToken();
     const res = await fetch('/api/result', {
       method: 'POST',
       headers: {
