@@ -8,7 +8,20 @@ exports.handler = async (event) => {
   const admin = process.env.ADMIN_PASSWORD;
 
   if (token !== viewer && token !== admin) {
-    return { statusCode: 401, body: JSON.stringify({ error: 'Unauthorized' }) };
+    return {
+      statusCode: 401,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        error: 'Unauthorized',
+        debug: {
+          tokenReceived: token ? `len=${token.length}` : 'EMPTY',
+          viewerSet: !!viewer,
+          adminSet: !!admin,
+          supabaseUrlSet: !!process.env.SUPABASE_URL,
+          supabaseKeySet: !!process.env.SUPABASE_ANON_KEY,
+        },
+      }),
+    };
   }
 
   const { data, error } = await supabase
