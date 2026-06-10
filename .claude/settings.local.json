@@ -1,7 +1,35 @@
 {
   "permissions": {
     "allow": [
-      "Bash(node -e \"require\\('./bets.js'\\); console.log\\('bets.js parses, BETS length:', \\(eval\\(require\\('fs'\\).readFileSync\\('./bets.js','utf8'\\) + '; BETS.length'\\)\\)\\)\")"
+      "Bash(node -e \"require\\('./bets.js'\\); console.log\\('bets.js parses, BETS length:', \\(eval\\(require\\('fs'\\).readFileSync\\('./bets.js','utf8'\\) + '; BETS.length'\\)\\)\\)\")",
+      "Bash(node -e \"const fs=require\\('fs'\\); eval\\(fs.readFileSync\\('bets.js','utf8'\\)\\); console.log\\('matches:',BETS.length\\); console.log\\('players:',Object.keys\\(BETS[0]\\).filter\\(k=>!['grupa','datum','tim1','tim2'].includes\\(k\\)\\)\\); console.log\\('groups:',[...new Set\\(BETS.map\\(b=>b.grupa\\)\\)]\\); console.log\\('dates:',[...new Set\\(BETS.map\\(b=>b.datum\\)\\)]\\); console.log\\('sample last:', JSON.stringify\\(BETS[BETS.length-1],null,1\\)\\);\")",
+      "Bash(node -e \"const fs=require\\('fs'\\); global.BETS=undefined; eval\\(fs.readFileSync\\('bets.js','utf8'\\)+'; global.BETS=BETS;'\\); const B=global.BETS; console.log\\('matches:',B.length\\); console.log\\('players:',Object.keys\\(B[0]\\).filter\\(k=>!['grupa','datum','tim1','tim2'].includes\\(k\\)\\)\\); console.log\\('groups:',[...new Set\\(B.map\\(b=>b.grupa\\)\\)]\\); console.log\\('dates:',[...new Set\\(B.map\\(b=>b.datum\\)\\)]\\); console.log\\('last:', JSON.stringify\\(B[B.length-1]\\)\\);\")",
+      "Bash(node -e \"const fs=require\\('fs'\\); eval\\(fs.readFileSync\\('bets.js','utf8'\\)+'; global._B=BETS;'\\); const B=global._B; fs.mkdirSync\\('js',{recursive:true}\\); fs.mkdirSync\\('css',{recursive:true}\\); const out='// Auto-generated betting predictions for World Cup 2026 pool.\\\\n// Each entry: group, date, two teams, and one prediction object per player\\\\n// \\(ishod = 1/X/2 outcome, rezultat = exact score guess\\).\\\\nexport const BETS = '+JSON.stringify\\(B,null,2\\)+';\\\\n'; fs.writeFileSync\\('js/data.js',out\\); console.log\\('wrote js/data.js bytes=',out.length\\);\")",
+      "Bash(node --input-type=module -e ' *)",
+      "Bash(rm -rf .tmptest)",
+      "Bash(mkdir -p .tmptest)",
+      "Bash(cp -r js .tmptest/js)",
+      "Bash(printf '{\"type\":\"module\"}')",
+      "Bash(node .tmptest/run.mjs)",
+      "Bash(node -e \"for\\(const p of ['puppeteer','playwright','playwright-core','jsdom']\\){try{require.resolve\\(p\\);console.log\\('FOUND',p\\)}catch{console.log\\('no',p\\)}}\")",
+      "Bash(ls \"/c/Program Files/Google/Chrome/Application/chrome.exe\")",
+      "Bash(npx --version)",
+      "Bash(rm -f preview.html .preview-server.cjs .shot-standings.png .shot-matches.png .shot-players.png .shot-player.png .shot-admin.png)",
+      "Bash(powershell -NoProfile -Command 'Get-NetTCPConnection -LocalPort 8799 -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }')",
+      "Bash(git add *)",
+      "Bash(git commit -q -m '@ *)",
+      "Bash(git commit -q --amend -m 'Redesign UI into a multi-file ES module app' -m 'Replace the single-file index.html \\(which read a global BETS and broke the Netlify deploy after bets.js was removed\\) with a structured, light-theme redesign: *)",
+      "Bash(git push *)",
+      "Bash(git -c http.sslBackend=schannel push origin main)",
+      "Bash(python -c ' *)",
+      "Bash(cat .claude/settings.json)",
+      "Bash(cat .claude/settings.local.json)",
+      "Bash(node -e \"try{require.resolve\\('playwright'\\);console.log\\('playwright OK'\\)}catch\\(e\\){console.log\\('no playwright'\\)} try{require.resolve\\('puppeteer'\\);console.log\\('puppeteer OK'\\)}catch\\(e\\){console.log\\('no puppeteer'\\)}\")",
+      "Read(//c/Program Files/Google/Chrome/Application/**)",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless --disable-gpu --hide-scrollbars --force-device-scale-factor=1 --virtual-time-budget=4000 --window-size=1120,4200 --screenshot=\"__shot_desktop.png\" \"http://localhost:8123/__preview.html\")",
+      "Bash(rm -f __preview.html __preview.js __preview2.html __preview2.js)",
+      "Bash(rm -f \"/c/Users/Lobel/AppData/Local/Temp/__shot_\"*.png)",
+      "Bash(taskkill //IM python.exe //F)"
     ]
   }
 }

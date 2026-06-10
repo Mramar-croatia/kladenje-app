@@ -4,7 +4,7 @@
 import { BETS } from '../data.js';
 import { PLAYERS, PLAYER_META } from '../config.js';
 import { computeStandings, scoreMatch, outcomeOf } from '../scoring.js';
-import { el, esc, statusIcon, prettyDate } from '../ui.js';
+import { el, esc, icon, statusIcon, ishodPill, prettyDate } from '../ui.js';
 
 function statBox(label, value, accent) {
   return `<div class="statbox"><div class="statbox-val" style="${accent ? 'color:' + accent : ''}">${value}</div><div class="statbox-lbl">${label}</div></div>`;
@@ -51,7 +51,7 @@ export function renderPlayers(results) {
         ${statBox('Preciznost', row.accuracy + '%')}
         ${statBox('Najbolja grupa', bg ? bg.g : '—')}
       </div>
-      <div class="pcard-go">Pogledaj sve tipove →</div>`;
+      <div class="pcard-go">Pogledaj sve tipove ${icon('arrow', 15)}</div>`;
     grid.appendChild(card);
   });
   wrap.appendChild(grid);
@@ -69,9 +69,13 @@ export function renderPlayerDetail(player, results) {
 
   const row = computeStandings(results).find((r) => r.player === player);
 
-  wrap.appendChild(el('a', { class: 'back-link', href: '#/igraci', text: '← Svi igrači' }));
+  wrap.appendChild(el('a', {
+    class: 'back-link',
+    href: '#/igraci',
+    html: `${icon('back', 16)} Svi igrači`,
+  }));
 
-  const header = el('div', { class: 'player-hero' });
+  const header = el('div', { class: 'player-hero', style: `--c:${meta.color}` });
   header.innerHTML = `
     <span class="avatar" style="--c:${meta.color};width:64px;height:64px;font-size:26px">${esc(meta.initials)}</span>
     <div class="player-hero-info">
@@ -98,10 +102,11 @@ export function renderPlayerDetail(player, results) {
       <span class="chip chip--group">${esc(m.grupa)}</span>
       <span class="tip-teams">${esc(m.tim1)} – ${esc(m.tim2)}</span>
       <span class="tip-date">${esc(prettyDate(m.datum))}</span>
+      ${ishodPill(m[player].ishod)}
       <span class="tip-guess">tip <b>${esc(m[player].rezultat)}</b></span>
-      <span class="tip-actual">${played ? esc(actual) : '—'}</span>
+      <span class="tip-actual${played ? '' : ' is-pending'}">${played ? esc(actual) : '—'}</span>
       ${statusIcon(s.kind)}
-      <span class="tip-pts">${played ? '+' + s.pts : ''}</span>`;
+      <span class="tip-pts${played && s.pts ? '' : ' is-zero'}">${played ? '+' + s.pts : ''}</span>`;
     list.appendChild(tip);
   });
   wrap.appendChild(list);

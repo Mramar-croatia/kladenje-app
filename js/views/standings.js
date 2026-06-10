@@ -7,9 +7,11 @@ import { el, esc, avatar } from '../ui.js';
 
 function formDots(form) {
   if (!form.length) return '<span class="form-empty">—</span>';
-  return form
-    .map((k) => `<span class="form-dot form-dot--${k}"></span>`)
-    .join('');
+  return (
+    '<span class="form-dots">' +
+    form.map((k) => `<span class="form-dot form-dot--${k}"></span>`).join('') +
+    '</span>'
+  );
 }
 
 function podiumCard(row, place) {
@@ -36,17 +38,20 @@ export function renderStandings(results) {
 
   // Progress banner
   const pct = Math.round((played / total) * 100);
+  const leadTitle = played && leader
+    ? `<span class="banner-lead">${avatar(PLAYER_META[leader.player], 30)} ${esc(PLAYER_META[leader.player].name)} vodi</span>`
+    : 'Poredak';
   wrap.appendChild(el('div', {
     class: 'banner',
     html: `
       <div class="banner-row">
         <div>
           <div class="banner-kicker">Svjetsko prvenstvo 2026 · grupna faza</div>
-          <div class="banner-title">${leader ? esc(PLAYER_META[leader.player].name) + ' vodi' : 'Poredak'}</div>
+          <div class="banner-title">${leadTitle}</div>
         </div>
         <div class="banner-progress">
           <div class="banner-progress-num">${played}<span>/${total}</span></div>
-          <div class="banner-progress-lbl">odigranih utakmica</div>
+          <div class="banner-progress-lbl">odigrano</div>
         </div>
       </div>
       <div class="progress"><div class="progress-fill" style="width:${pct}%"></div></div>`,
@@ -86,13 +91,15 @@ export function renderStandings(results) {
     });
     r.innerHTML = `
       <span class="lh-rank"><span class="rank-badge rank-${row.rank}">${row.rank}</span></span>
-      <span class="lh-player">${avatar(meta, 34)}<span class="lr-name">${esc(meta.name)}</span></span>
+      <span class="lh-player">${avatar(meta, 36)}<span class="lr-name">${esc(meta.name)}</span></span>
       <span class="lh-num lr-pts">${row.pts}</span>
-      <span class="lh-num">${row.perfect}</span>
-      <span class="lh-num">${row.correct}</span>
+      <span class="lh-num lr-num-2">${row.perfect}</span>
+      <span class="lh-num lr-num-2">${row.correct}</span>
       <span class="lh-acc">
-        <span class="acc-bar"><span class="acc-fill" style="width:${row.accuracy}%;--c:${meta.color}"></span></span>
-        <span class="acc-val">${row.accuracy}%</span>
+        <span class="acc-cell">
+          <span class="acc-bar"><span class="acc-fill" style="width:${row.accuracy}%;--c:${meta.color}"></span></span>
+          <span class="acc-val">${row.accuracy}%</span>
+        </span>
       </span>
       <span class="lh-form">${formDots(row.form)}</span>`;
     table.appendChild(r);

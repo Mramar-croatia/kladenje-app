@@ -4,7 +4,7 @@
 import { BETS } from '../data.js';
 import { PLAYERS, PLAYER_META } from '../config.js';
 import { scoreMatch, outcomeOf } from '../scoring.js';
-import { el, esc, statusIcon, prettyDate } from '../ui.js';
+import { el, esc, icon, statusIcon, ishodPill, prettyDate } from '../ui.js';
 
 // Filter state persists while the user is in the session.
 const filters = { status: 'all', grupa: 'all', q: '' };
@@ -13,16 +13,22 @@ const GROUPS = [...new Set(BETS.map((b) => b.grupa))].sort();
 
 function matchCard(match, idx, actual) {
   const played = !!outcomeOf(actual);
-  const card = el('div', { class: 'match-card' + (played ? '' : ' match-card--upcoming') });
+  const card = el('div', {
+    class: 'match-card ' + (played ? 'match-card--played' : 'match-card--upcoming'),
+  });
 
+  // One cell per player: outcome (1/X/2), exact-score tip, and scoring status.
   const preds = PLAYERS.map((p) => {
     const meta = PLAYER_META[p];
     const s = played ? scoreMatch(match[p], actual) : { kind: 'pending', pts: 0 };
     return `
-      <div class="pred pred--${s.kind}">
-        <span class="pred-who" style="--c:${meta.color}">${esc(meta.name)}</span>
-        <span class="pred-score">${esc(match[p].rezultat)}</span>
-        ${statusIcon(s.kind)}
+      <div class="pcell pcell--${s.kind}">
+        <span class="pcell-who" style="--c:${meta.color}">${esc(meta.name)}</span>
+        ${ishodPill(match[p].ishod)}
+        <span class="pcell-line">
+          <span class="pcell-score">${esc(match[p].rezultat)}</span>
+          ${statusIcon(s.kind)}
+        </span>
       </div>`;
   }).join('');
 
@@ -30,7 +36,7 @@ function matchCard(match, idx, actual) {
     <div class="match-head">
       <span class="chip chip--group">Grupa ${esc(match.grupa)}</span>
       <span class="chip chip--date">${esc(prettyDate(match.datum))}</span>
-      <span class="match-status ${played ? 'is-played' : 'is-upcoming'}">${played ? 'Odigrano' : 'Nije odigrano'}</span>
+      <span class="match-status ${played ? 'is-played' : 'is-upcoming'}">${played ? 'Odigrano' : 'Nadolazi'}</span>
     </div>
     <div class="match-teams">
       <span class="team team--home">${esc(match.tim1)}</span>
@@ -69,7 +75,10 @@ export function renderMatches(results, rerender) {
       <button data-status="upcoming" class="${filters.status === 'upcoming' ? 'active' : ''}">Nadolazeće</button>
     </div>
     <select class="select" id="grp-select">${groupOpts}</select>
-    <input class="search" id="match-search" type="search" placeholder="Traži reprezentaciju…" value="${esc(filters.q)}" />`;
+    <span class="search-wrap">
+      ${icon('search', 18)}
+      <input class="search" id="match-search" type="search" placeholder="Traži reprezentaciju…" value="${esc(filters.q)}" />
+    </span>`;
 
   toolbar.querySelectorAll('.segmented button').forEach((b) => {
     b.addEventListener('click', () => {

@@ -27,6 +27,35 @@ export function esc(s) {
   ));
 }
 
+// ---------------------------------------------------------------------------
+// Inline SVG icon set (stroke = currentColor). Keeps the UI crisp at any size
+// and avoids emoji rendering differences across platforms.
+// ---------------------------------------------------------------------------
+const ICONS = {
+  trophy:
+    '<path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4Z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/>',
+  ball:
+    '<circle cx="12" cy="12" r="9"/><path d="m12 7 4.7 3.4-1.8 5.5H9.1L7.3 10.4 12 7Z"/>',
+  users:
+    '<path d="M16 19v-1a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v1"/><circle cx="9" cy="7" r="3"/><path d="M22 19v-1a4 4 0 0 0-3-3.85M16 4.15A4 4 0 0 1 16 11"/>',
+  edit:
+    '<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z"/>',
+  logout:
+    '<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5M21 12H9"/>',
+  search:
+    '<circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>',
+  back: '<path d="m15 18-6-6 6-6"/>',
+  arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+  flame:
+    '<path d="M12 2s4 4 4 8a4 4 0 0 1-8 0c0-1 .4-2 1-3-.2 2 1 3 1 3 .5-2-1-4 2-8Z"/>',
+};
+
+// Inline SVG markup for a named icon.
+export function icon(name, size = 20) {
+  const body = ICONS[name] || '';
+  return `<svg class="ico" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${body}</svg>`;
+}
+
 // Inline status icon for a scoring kind.
 export function statusIcon(kind) {
   const map = {
@@ -37,6 +66,15 @@ export function statusIcon(kind) {
   };
   const m = map[kind] || map.pending;
   return `<span class="status status--${m.cls}" title="${m.title}">${m.sym}</span>`;
+}
+
+// 1 / X / 2 outcome pill. Home win / draw / away win get distinct tints so the
+// prediction is scannable at a glance.
+const ISHOD_TITLE = { '1': 'Domaćin', X: 'Neriješeno', '2': 'Gost' };
+export function ishodPill(ishod) {
+  const v = (ishod || '').toUpperCase();
+  const cls = v === '1' || v === 'X' || v === '2' ? v : 'na';
+  return `<span class="ish ish--${cls}" title="${ISHOD_TITLE[v] || ''}">${esc(v || '–')}</span>`;
 }
 
 // "11.6." -> "11. lip" style short label for chips. Falls back to raw.

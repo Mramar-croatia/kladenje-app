@@ -15,15 +15,18 @@
   <!-- Login screen -->
   <div id="auth-screen" class="auth-wrap" style="display:none;">
     <div class="auth-card">
-      <div class="auth-logo">⚽</div>
-      <h1>Kladionica SP 2026</h1>
+      <div class="auth-logo">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m12 7 4.7 3.4-1.8 5.5H9.1L7.3 10.4 12 7Z"/></svg>
+      </div>
+      <div class="auth-kicker">Svjetsko prvenstvo 2026</div>
+      <h1>Kladionica</h1>
       <p>Unesite lozinku za pristup natjecanju.</p>
       <form id="auth-form" autocomplete="on">
         <input id="auth-pwd" type="password" placeholder="Lozinka" autocomplete="current-password" autofocus />
         <button type="submit" class="btn btn--block">Uđi</button>
         <div id="auth-err" class="auth-err"></div>
       </form>
-      <div class="auth-foot">Svjetsko prvenstvo · grupna faza</div>
+      <div class="auth-foot">Grupna faza · 4 igrača</div>
     </div>
   </div>
 
@@ -32,13 +35,17 @@
     <header class="appbar">
       <div class="appbar-inner">
         <a class="brand" href="#/poredak">
-          <span class="brand-mark">⚽</span>
-          <span class="brand-text">Kladionica <b>SP 2026</b></span>
+          <span class="brand-mark">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m12 7 4.7 3.4-1.8 5.5H9.1L7.3 10.4 12 7Z"/></svg>
+          </span>
+          <span class="brand-text">Kladionica <b>SP&nbsp;2026</b></span>
         </a>
         <nav class="tabs" id="tabs"></nav>
         <div class="appbar-right">
           <span id="role-badge" class="role-badge"></span>
-          <button class="logout" id="logout-btn" title="Odjava">Odjava</button>
+          <button class="logout" id="logout-btn" title="Odjava" aria-label="Odjava">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5M21 12H9"/></svg>
+          </button>
         </div>
       </div>
     </header>

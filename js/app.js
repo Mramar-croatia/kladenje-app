@@ -6,13 +6,13 @@ import { renderStandings } from './views/standings.js';
 import { renderMatches } from './views/matches.js';
 import { renderPlayers, renderPlayerDetail } from './views/players.js';
 import { renderAdmin } from './views/admin.js';
-import { el } from './ui.js';
+import { el, icon } from './ui.js';
 
 const TABS = [
-  { id: 'poredak', label: 'Poredak', icon: '🏆' },
-  { id: 'utakmice', label: 'Utakmice', icon: '⚽' },
-  { id: 'igraci', label: 'Igrači', icon: '👥' },
-  { id: 'unos', label: 'Unos', icon: '✏️', adminOnly: true },
+  { id: 'poredak', label: 'Poredak', icon: 'trophy' },
+  { id: 'utakmice', label: 'Utakmice', icon: 'ball' },
+  { id: 'igraci', label: 'Igrači', icon: 'users' },
+  { id: 'unos', label: 'Unos', icon: 'edit', adminOnly: true },
 ];
 
 let results = {};
@@ -58,12 +58,12 @@ function renderChrome(activeTab) {
     tabsEl.appendChild(el('button', {
       class: 'tab' + active,
       onClick: () => go(t.id),
-      html: `<span class="tab-ico">${t.icon}</span>${t.label}`,
+      html: `${icon(t.icon, 18)}<span>${t.label}</span>`,
     }));
     bottomEl.appendChild(el('button', {
       class: 'bnav-btn' + active,
       onClick: () => go(t.id),
-      html: `<span class="bnav-ico">${t.icon}</span><span class="bnav-lbl">${t.label}</span>`,
+      html: `${icon(t.icon, 22)}<span class="bnav-lbl">${t.label}</span>`,
     }));
   });
 
