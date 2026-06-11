@@ -3,7 +3,7 @@
 import { BETS } from './data.js';
 
 // Fields on a bet entry that are NOT players.
-const META_FIELDS = new Set(['grupa', 'datum', 'tim1', 'tim2']);
+const META_FIELDS = new Set(['match', 'grupa', 'datum', 'vrijeme', 'tim1', 'tim2']);
 
 // Players are derived dynamically from the first bet entry (keeps the app
 // agnostic about who is playing — add/remove a player in data.js and it works).

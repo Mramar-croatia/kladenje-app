@@ -4,25 +4,28 @@
 import { BETS } from '../data.js';
 import { PLAYERS, PLAYER_META } from '../config.js';
 import { computeStandings, scoreMatch, outcomeOf } from '../scoring.js';
-import { el, esc, icon, statusIcon, ishodPill, prettyDate } from '../ui.js';
+import { el, esc, icon, statusIcon, ishodPill, prettyDate, prettyTime } from '../ui.js';
 
 function statBox(label, value, accent) {
   return `<div class="statbox"><div class="statbox-val" style="${accent ? 'color:' + accent : ''}">${value}</div><div class="statbox-lbl">${label}</div></div>`;
 }
 
-// Best group for a player by points earned there.
-function bestGroup(player, results) {
-  const byGroup = {};
+// Longest run of consecutive scoring hits (exact result or correct outcome)
+// across played matches in fixture order. A more telling stat than "best group".
+function longestStreak(player, results) {
+  let best = 0;
+  let cur = 0;
   BETS.forEach((m, idx) => {
     const actual = results[String(idx)];
     if (!outcomeOf(actual)) return;
     const s = scoreMatch(m[player], actual);
-    byGroup[m.grupa] = (byGroup[m.grupa] || 0) + s.pts;
+    if (s.kind === 'perfect' || s.kind === 'correct') {
+      cur += 1;
+      if (cur > best) best = cur;
+    } else {
+      cur = 0;
+    }
   });
-  let best = null;
-  for (const [g, pts] of Object.entries(byGroup)) {
-    if (!best || pts > best.pts) best = { g, pts };
-  }
   return best;
 }
 
@@ -34,7 +37,7 @@ export function renderPlayers(results) {
   const grid = el('div', { class: 'player-grid' });
   standings.forEach((row) => {
     const meta = PLAYER_META[row.player];
-    const bg = bestGroup(row.player, results);
+    const streak = longestStreak(row.player, results);
     const card = el('a', { class: 'pcard', href: '#/igraci/' + row.player });
     card.innerHTML = `
       <div class="pcard-top">
@@ -49,7 +52,7 @@ export function renderPlayers(results) {
         ${statBox('Točan rez.', row.perfect, meta.color)}
         ${statBox('Točan ishod', row.correct)}
         ${statBox('Preciznost', row.accuracy + '%')}
-        ${statBox('Najbolja grupa', bg ? bg.g : '—')}
+        ${statBox('Najduži niz', streak)}
       </div>
       <div class="pcard-go">Pogledaj sve tipove ${icon('arrow', 15)}</div>`;
     grid.appendChild(card);
@@ -99,14 +102,19 @@ export function renderPlayerDetail(player, results) {
     const s = played ? scoreMatch(m[player], actual) : { kind: 'pending', pts: 0 };
     const tip = el('div', { class: 'tip-row tip-row--' + s.kind });
     tip.innerHTML = `
-      <span class="chip chip--group">${esc(m.grupa)}</span>
-      <span class="tip-teams">${esc(m.tim1)} – ${esc(m.tim2)}</span>
-      <span class="tip-date">${esc(prettyDate(m.datum))}</span>
-      ${ishodPill(m[player].ishod)}
-      <span class="tip-guess">tip <b>${esc(m[player].rezultat)}</b></span>
-      <span class="tip-actual${played ? '' : ' is-pending'}">${played ? esc(actual) : '—'}</span>
-      ${statusIcon(s.kind)}
-      <span class="tip-pts${played && s.pts ? '' : ' is-zero'}">${played ? '+' + s.pts : ''}</span>`;
+      <div class="tip-main">
+        <span class="chip chip--group">${esc(m.grupa)}</span>
+        <span class="tip-teams">${esc(m.tim1)} – ${esc(m.tim2)}</span>
+        <span class="tip-when">${esc(prettyDate(m.datum))}${m.vrijeme ? ' · ' + esc(prettyTime(m.vrijeme)) : ''}</span>
+      </div>
+      <div class="tip-info">
+        ${ishodPill(m[player].ishod)}
+        <span class="tip-guess"><span class="tip-lbl">tip</span> <b>${esc(m[player].rezultat)}</b></span>
+        <span class="tip-arrow">→</span>
+        <span class="tip-actual${played ? '' : ' is-pending'}">${played ? esc(actual) : '—'}</span>
+        ${statusIcon(s.kind)}
+        <span class="tip-pts${played && s.pts ? '' : ' is-zero'}">${played ? '+' + s.pts : ''}</span>
+      </div>`;
     list.appendChild(tip);
   });
   wrap.appendChild(list);

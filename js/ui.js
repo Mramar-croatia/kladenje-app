@@ -48,6 +48,8 @@ const ICONS = {
   arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
   flame:
     '<path d="M12 2s4 4 4 8a4 4 0 0 1-8 0c0-1 .4-2 1-3-.2 2 1 3 1 3 .5-2-1-4 2-8Z"/>',
+  clock:
+    '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>',
 };
 
 // Inline SVG markup for a named icon.
@@ -84,6 +86,13 @@ export function prettyDate(datum) {
   if (!m) return datum || '';
   const month = MONTHS_HR[m[2]] || m[2] + '.';
   return `${m[1]}. ${month}`;
+}
+
+// "4:00" -> "04:00" — zero-pad the hour so kickoff times line up.
+export function prettyTime(vrijeme) {
+  const m = /^(\d{1,2}):(\d{2})$/.exec(vrijeme || '');
+  if (!m) return vrijeme || '';
+  return `${m[1].padStart(2, '0')}:${m[2]}`;
 }
 
 // Avatar bubble with initials in the player's colour.

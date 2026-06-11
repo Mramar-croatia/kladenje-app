@@ -29,7 +29,8 @@
       "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless --disable-gpu --hide-scrollbars --force-device-scale-factor=1 --virtual-time-budget=4000 --window-size=1120,4200 --screenshot=\"__shot_desktop.png\" \"http://localhost:8123/__preview.html\")",
       "Bash(rm -f __preview.html __preview.js __preview2.html __preview2.js)",
       "Bash(rm -f \"/c/Users/Lobel/AppData/Local/Temp/__shot_\"*.png)",
-      "Bash(taskkill //IM python.exe //F)"
+      "Bash(taskkill //IM python.exe //F)",
+      "Bash(node -e ' *)"
     ]
   }
 }

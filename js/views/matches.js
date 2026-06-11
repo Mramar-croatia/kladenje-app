@@ -4,7 +4,7 @@
 import { BETS } from '../data.js';
 import { PLAYERS, PLAYER_META } from '../config.js';
 import { scoreMatch, outcomeOf } from '../scoring.js';
-import { el, esc, icon, statusIcon, ishodPill, prettyDate } from '../ui.js';
+import { el, esc, icon, statusIcon, ishodPill, prettyDate, prettyTime } from '../ui.js';
 
 // Filter state persists while the user is in the session.
 const filters = { status: 'all', grupa: 'all', q: '' };
@@ -35,7 +35,7 @@ function matchCard(match, idx, actual) {
   card.innerHTML = `
     <div class="match-head">
       <span class="chip chip--group">Grupa ${esc(match.grupa)}</span>
-      <span class="chip chip--date">${esc(prettyDate(match.datum))}</span>
+      ${match.vrijeme ? `<span class="chip chip--time">${icon('clock', 13)}${esc(prettyTime(match.vrijeme))}</span>` : ''}
       <span class="match-status ${played ? 'is-played' : 'is-upcoming'}">${played ? 'Odigrano' : 'Nadolazi'}</span>
     </div>
     <div class="match-teams">

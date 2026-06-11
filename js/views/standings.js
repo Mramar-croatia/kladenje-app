@@ -5,18 +5,12 @@ import { PLAYER_META } from '../config.js';
 import { computeStandings, playedCount } from '../scoring.js';
 import { el, esc, avatar } from '../ui.js';
 
-function formDots(form) {
-  if (!form.length) return '<span class="form-empty">—</span>';
-  return (
-    '<span class="form-dots">' +
-    form.map((k) => `<span class="form-dot form-dot--${k}"></span>`).join('') +
-    '</span>'
-  );
-}
-
+// `place` controls the pedestal's visual height/styling (1 = tallest, centre);
+// the medal and the number shown come from the player's actual `row.rank`, so
+// players tied on points share the same medal and rank number.
 function podiumCard(row, place) {
   const meta = PLAYER_META[row.player];
-  const medal = { 1: '🥇', 2: '🥈', 3: '🥉' }[place] || '';
+  const medal = { 1: '🥇', 2: '🥈', 3: '🥉' }[row.rank] || '';
   return `
     <div class="podium-card podium-card--${place}">
       <div class="podium-medal">${medal}</div>
@@ -24,7 +18,7 @@ function podiumCard(row, place) {
       <div class="podium-name">${esc(meta.name)}</div>
       <div class="podium-pts">${row.pts}<span>bod.</span></div>
       <div class="podium-sub">${row.perfect} pogodaka · ${row.accuracy}%</div>
-      <div class="podium-stand" style="--h:${place === 1 ? 96 : place === 2 ? 72 : 56}px">${place}</div>
+      <div class="podium-stand" style="--h:${place === 1 ? 96 : place === 2 ? 72 : 56}px">${row.rank}</div>
     </div>`;
 }
 
@@ -77,10 +71,7 @@ export function renderStandings(results) {
       <span class="lh-rank">#</span>
       <span class="lh-player">Igrač</span>
       <span class="lh-num">Bod.</span>
-      <span class="lh-num">Točan rez.</span>
-      <span class="lh-num">Točan ishod</span>
       <span class="lh-acc">Preciznost</span>
-      <span class="lh-form">Forma</span>
     </div>`;
 
   standings.forEach((row) => {
@@ -88,20 +79,18 @@ export function renderStandings(results) {
     const r = el('a', {
       class: 'lead-row' + (row.rank === 1 && played ? ' lead-row--leader' : ''),
       href: '#/igraci/' + row.player,
+      title: meta.name,
     });
     r.innerHTML = `
       <span class="lh-rank"><span class="rank-badge rank-${row.rank}">${row.rank}</span></span>
-      <span class="lh-player">${avatar(meta, 36)}<span class="lr-name">${esc(meta.name)}</span></span>
+      <span class="lh-player">${avatar(meta, 36)}</span>
       <span class="lh-num lr-pts">${row.pts}</span>
-      <span class="lh-num lr-num-2">${row.perfect}</span>
-      <span class="lh-num lr-num-2">${row.correct}</span>
       <span class="lh-acc">
         <span class="acc-cell">
           <span class="acc-bar"><span class="acc-fill" style="width:${row.accuracy}%;--c:${meta.color}"></span></span>
           <span class="acc-val">${row.accuracy}%</span>
         </span>
-      </span>
-      <span class="lh-form">${formDots(row.form)}</span>`;
+      </span>`;
     table.appendChild(r);
   });
 

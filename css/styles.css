@@ -304,6 +304,8 @@ a { color: inherit; text-decoration: none; }
 }
 .chip--group { background: var(--brand-soft); border-color: transparent; color: var(--brand-800); }
 .chip--date { color: var(--text-3); background: transparent; border-color: var(--border); }
+.chip--time { gap: 4px; color: var(--text-2); background: var(--surface-2); border-color: var(--border); }
+.chip--time .ico { color: var(--text-3); }
 
 .avatar {
   display: inline-grid;
@@ -325,6 +327,8 @@ a { color: inherit; text-decoration: none; }
   font-size: 11px;
   font-weight: 800;
   line-height: 1;
+  overflow: hidden;
+  flex: none;
 }
 .status--perfect { background: var(--perfect-soft); color: var(--perfect); }
 .status--correct { background: var(--correct-soft); color: var(--correct); }
@@ -503,7 +507,7 @@ a { color: inherit; text-decoration: none; }
 }
 .lead-head, .lead-row {
   display: grid;
-  grid-template-columns: 46px 1.7fr 0.7fr 0.85fr 0.85fr 1.3fr 1fr;
+  grid-template-columns: 52px 56px 1fr 2fr;
   align-items: center;
   gap: 8px;
   padding: 13px 18px;
@@ -567,6 +571,7 @@ a { color: inherit; text-decoration: none; }
 }
 .legend span { display: inline-flex; align-items: center; gap: 8px; }
 .legend b { color: var(--text); }
+.legend .status { width: 22px; height: 22px; font-size: 12px; }
 
 /* ==========================================================================
    Matches
@@ -632,7 +637,7 @@ a { color: inherit; text-decoration: none; }
 
 .preds {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(54px, 1fr));
   gap: 7px;
   border-top: 1px dashed var(--border);
   padding-top: 14px;
@@ -731,24 +736,43 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
 }
 .tip-row {
-  display: grid;
-  grid-template-columns: 30px 1.7fr 0.8fr 26px 0.7fr 0.7fr 22px 40px;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
-  padding: 12px 16px;
+  gap: 10px 14px;
+  padding: 13px 16px;
   border-bottom: 1px solid var(--border);
   font-size: 14px;
 }
 .tip-row:last-child { border-bottom: none; }
 .tip-row--perfect { background: linear-gradient(90deg, var(--perfect-softer), transparent 75%); }
 .tip-row--correct { background: linear-gradient(90deg, var(--brand-softer), transparent 75%); }
-.tip-teams { font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.tip-date { color: var(--text-3); font-size: 12.5px; text-align: center; font-weight: 600; }
-.tip-guess { color: var(--text-2); font-size: 13px; text-align: center; }
+
+.tip-main {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  flex: 1 1 200px;
+  min-width: 0;
+}
+.tip-teams { font-weight: 700; line-height: 1.25; letter-spacing: -0.01em; }
+.tip-when { width: 100%; color: var(--text-3); font-size: 12px; font-weight: 600; }
+
+.tip-info {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-left: auto;
+  flex-wrap: nowrap;
+}
+.tip-guess { color: var(--text-2); font-size: 13px; white-space: nowrap; }
+.tip-lbl { color: var(--text-3); font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 700; }
 .tip-guess b { color: var(--text); font-weight: 800; }
-.tip-actual { font-weight: 800; text-align: center; }
+.tip-arrow { color: var(--text-3); font-weight: 800; }
+.tip-actual { font-weight: 800; min-width: 30px; text-align: center; }
 .tip-actual.is-pending { color: var(--text-3); font-weight: 600; }
-.tip-pts { text-align: right; font-weight: 800; color: var(--correct); }
+.tip-pts { min-width: 30px; text-align: right; font-weight: 800; color: var(--correct); }
 .tip-pts.is-zero { color: var(--text-3); }
 
 /* ==========================================================================
@@ -834,14 +858,10 @@ a { color: inherit; text-decoration: none; }
   .banner-title { font-size: 22px; }
   .banner-progress-num { font-size: 28px; }
 
-  /* Compact leaderboard: hide outcome + form columns */
-  .lead-head, .lead-row { grid-template-columns: 40px 1.5fr 0.6fr 0.7fr 1.1fr; }
-  .lead-row > :nth-child(5), .lead-head > :nth-child(5) { display: none; } /* Točan ishod */
-  .lead-row > :nth-child(7), .lead-head > :nth-child(7) { display: none; } /* Forma */
+  .lead-head, .lead-row { grid-template-columns: 44px 48px 0.8fr 1.7fr; padding: 13px 14px; }
 
-  .tip-row { grid-template-columns: 26px 1.5fr 26px 0.7fr 20px 36px; gap: 8px; font-size: 13px; }
-  .tip-row > .tip-date { display: none; }
-  .tip-row > .tip-guess { display: none; }
+  /* Player tips stack: match info on top, prediction/result line below */
+  .tip-info { margin-left: 0; width: 100%; justify-content: flex-start; gap: 10px; }
 
   .pcard-stats, .player-hero-stats { grid-template-columns: repeat(2, 1fr); }
 }

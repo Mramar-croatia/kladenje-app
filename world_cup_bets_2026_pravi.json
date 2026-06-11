@@ -1,1586 +1,938 @@
 [
   {
+    "match": 1,
     "grupa": "A",
     "datum": "11.6.",
+    "vrijeme": "21:00",
     "tim1": "MEKSIKO",
     "tim2": "JUŽNA AFRIKA",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "2:1"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "3:1"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "3:0"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "3:0"
-    }
+    "tomek": { "ishod": "1", "rezultat": "2:1" },
+    "damir": { "ishod": "1", "rezultat": "3:1" },
+    "julio": { "ishod": "1", "rezultat": "3:0" },
+    "tata": { "ishod": "1", "rezultat": "3:0" },
+    "filip": { "ishod": "2", "rezultat": "0:1" }
   },
   {
+    "match": 2,
     "grupa": "A",
     "datum": "12.6.",
+    "vrijeme": "4:00",
     "tim1": "JUŽNA KOREJA",
     "tim2": "ČEŠKA",
-    "tomek": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "4:2"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    },
-    "tata": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    }
+    "tomek": { "ishod": "X", "rezultat": "0:0" },
+    "damir": { "ishod": "1", "rezultat": "4:2" },
+    "julio": { "ishod": "1", "rezultat": "1:0" },
+    "tata": { "ishod": "X", "rezultat": "0:0" },
+    "filip": { "ishod": "1", "rezultat": "2:1" }
   },
   {
+    "match": 3,
     "grupa": "B",
     "datum": "12.6.",
+    "vrijeme": "21:00",
     "tim1": "KANADA",
     "tim2": "BIH",
-    "tomek": {
-      "ishod": "2",
-      "rezultat": "1:2"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "3:1"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "1:1"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "2:1"
-    }
+    "tomek": { "ishod": "2", "rezultat": "1:2" },
+    "damir": { "ishod": "1", "rezultat": "3:1" },
+    "julio": { "ishod": "1", "rezultat": "1:1" },
+    "tata": { "ishod": "1", "rezultat": "2:1" },
+    "filip": { "ishod": "2", "rezultat": "1:2" }
   },
   {
+    "match": 4,
     "grupa": "D",
     "datum": "13.6.",
+    "vrijeme": "3:00",
     "tim1": "USA",
     "tim2": "PARAGVAJ",
-    "tomek": {
-      "ishod": "2",
-      "rezultat": "0:1"
-    },
-    "damir": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "2:1"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    }
+    "tomek": { "ishod": "2", "rezultat": "0:1" },
+    "damir": { "ishod": "X", "rezultat": "1:1" },
+    "julio": { "ishod": "1", "rezultat": "2:1" },
+    "tata": { "ishod": "1", "rezultat": "1:0" },
+    "filip": { "ishod": "X", "rezultat": "0:0" }
   },
   {
-    "grupa": "B",
-    "datum": "13.6.",
-    "tim1": "KATAR",
-    "tim2": "ŠVICARSKA",
-    "tomek": {
-      "ishod": "2",
-      "rezultat": "0:2"
-    },
-    "damir": {
-      "ishod": "2",
-      "rezultat": "0:3"
-    },
-    "julijo": {
-      "ishod": "2",
-      "rezultat": "0:3"
-    },
-    "tata": {
-      "ishod": "2",
-      "rezultat": "0:3"
-    }
-  },
-  {
+    "match": 5,
     "grupa": "C",
     "datum": "14.6.",
-    "tim1": "BRAZIL",
-    "tim2": "MAROKO",
-    "tomek": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "3:1"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "3:0"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    }
-  },
-  {
-    "grupa": "C",
-    "datum": "14.6.",
+    "vrijeme": "3:00",
     "tim1": "HAITI",
     "tim2": "ŠKOTSKA",
-    "tomek": {
-      "ishod": "2",
-      "rezultat": "0:3"
-    },
-    "damir": {
-      "ishod": "2",
-      "rezultat": "1:2"
-    },
-    "julijo": {
-      "ishod": "2",
-      "rezultat": "0:1"
-    },
-    "tata": {
-      "ishod": "2",
-      "rezultat": "0:3"
-    }
+    "tomek": { "ishod": "2", "rezultat": "0:3" },
+    "damir": { "ishod": "2", "rezultat": "1:2" },
+    "julio": { "ishod": "2", "rezultat": "0:1" },
+    "tata": { "ishod": "2", "rezultat": "0:3" },
+    "filip": { "ishod": "2", "rezultat": "1:2" }
   },
   {
+    "match": 6,
     "grupa": "D",
     "datum": "14.6.",
+    "vrijeme": "6:00",
     "tim1": "AUSTRALIJA",
     "tim2": "TURSKA",
-    "tomek": {
-      "ishod": "2",
-      "rezultat": "1:2"
-    },
-    "damir": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    },
-    "julijo": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    },
-    "tata": {
-      "ishod": "2",
-      "rezultat": "1:2"
-    }
+    "tomek": { "ishod": "2", "rezultat": "1:2" },
+    "damir": { "ishod": "X", "rezultat": "0:0" },
+    "julio": { "ishod": "X", "rezultat": "0:0" },
+    "tata": { "ishod": "2", "rezultat": "1:2" },
+    "filip": { "ishod": "2", "rezultat": "2:4" }
   },
   {
-    "grupa": "E",
+    "match": 7,
+    "grupa": "C",
     "datum": "14.6.",
-    "tim1": "NJEMAČKA",
-    "tim2": "CURACAO",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "6:0"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "5:0"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "4:0"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "5:0"
-    }
+    "vrijeme": "0:00",
+    "tim1": "BRAZIL",
+    "tim2": "MAROKO",
+    "tomek": { "ishod": "X", "rezultat": "1:1" },
+    "damir": { "ishod": "1", "rezultat": "3:1" },
+    "julio": { "ishod": "1", "rezultat": "3:0" },
+    "tata": { "ishod": "1", "rezultat": "2:0" },
+    "filip": { "ishod": "2", "rezultat": "0:1" }
   },
   {
-    "grupa": "F",
-    "datum": "14.6.",
-    "tim1": "NIZOZEMSKA",
-    "tim2": "JAPAN",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "2:1"
-    },
-    "damir": {
-      "ishod": "X",
-      "rezultat": "2:2"
-    },
-    "julijo": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    },
-    "tata": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    }
+    "match": 8,
+    "grupa": "B",
+    "datum": "13.6.",
+    "vrijeme": "21:00",
+    "tim1": "KATAR",
+    "tim2": "ŠVICARSKA",
+    "tomek": { "ishod": "2", "rezultat": "0:2" },
+    "damir": { "ishod": "2", "rezultat": "0:3" },
+    "julio": { "ishod": "2", "rezultat": "0:3" },
+    "tata": { "ishod": "2", "rezultat": "0:3" },
+    "filip": { "ishod": "2", "rezultat": "0:4" }
   },
   {
+    "match": 9,
     "grupa": "E",
     "datum": "15.6.",
+    "vrijeme": "1:00",
     "tim1": "OBALA BJELOKOSTI",
     "tim2": "EKVADOR",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    },
-    "damir": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "2:1"
-    },
-    "tata": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    }
+    "tomek": { "ishod": "1", "rezultat": "1:0" },
+    "damir": { "ishod": "X", "rezultat": "0:0" },
+    "julio": { "ishod": "1", "rezultat": "2:1" },
+    "tata": { "ishod": "X", "rezultat": "0:0" },
+    "filip": { "ishod": "2", "rezultat": "1:5" }
   },
   {
+    "match": 10,
+    "grupa": "E",
+    "datum": "14.6.",
+    "vrijeme": "19:00",
+    "tim1": "NJEMAČKA",
+    "tim2": "CURACAO",
+    "tomek": { "ishod": "1", "rezultat": "6:0" },
+    "damir": { "ishod": "1", "rezultat": "5:0" },
+    "julio": { "ishod": "1", "rezultat": "4:0" },
+    "tata": { "ishod": "1", "rezultat": "5:0" },
+    "filip": { "ishod": "1", "rezultat": "5:0" }
+  },
+  {
+    "match": 11,
+    "grupa": "F",
+    "datum": "14.6.",
+    "vrijeme": "22:00",
+    "tim1": "NIZOZEMSKA",
+    "tim2": "JAPAN",
+    "tomek": { "ishod": "1", "rezultat": "2:1" },
+    "damir": { "ishod": "X", "rezultat": "2:2" },
+    "julio": { "ishod": "X", "rezultat": "0:0" },
+    "tata": { "ishod": "X", "rezultat": "1:1" },
+    "filip": { "ishod": "1", "rezultat": "3:2" }
+  },
+  {
+    "match": 12,
     "grupa": "F",
     "datum": "15.6.",
+    "vrijeme": "4:00",
     "tim1": "ŠVEDSKA",
     "tim2": "TUNIS",
-    "tomek": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    },
-    "damir": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "julijo": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    }
+    "tomek": { "ishod": "X", "rezultat": "0:0" },
+    "damir": { "ishod": "X", "rezultat": "1:1" },
+    "julio": { "ishod": "X", "rezultat": "0:0" },
+    "tata": { "ishod": "1", "rezultat": "1:0" },
+    "filip": { "ishod": "X", "rezultat": "1:1" }
   },
   {
-    "grupa": "H",
-    "datum": "15.6.",
-    "tim1": "ŠPANJOLSKA",
-    "tim2": "ZELENORTSKI OTOCI",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "4:0"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "3:0"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "6:0"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "4:0"
-    }
-  },
-  {
-    "grupa": "G",
-    "datum": "15.6.",
-    "tim1": "BELGIJA",
-    "tim2": "EGIPAT",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    },
-    "damir": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "2:1"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    }
-  },
-  {
+    "match": 13,
     "grupa": "H",
     "datum": "16.6.",
+    "vrijeme": "0:00",
     "tim1": "SAUDIJSKA ARABIJA",
     "tim2": "URUGVAJ",
-    "tomek": {
-      "ishod": "2",
-      "rezultat": "0:3"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "2:1"
-    },
-    "julijo": {
-      "ishod": "2",
-      "rezultat": "0:1"
-    },
-    "tata": {
-      "ishod": "2",
-      "rezultat": "0:2"
-    }
+    "tomek": { "ishod": "2", "rezultat": "0:3" },
+    "damir": { "ishod": "1", "rezultat": "2:1" },
+    "julio": { "ishod": "2", "rezultat": "0:1" },
+    "tata": { "ishod": "2", "rezultat": "0:2" },
+    "filip": { "ishod": "2", "rezultat": "1:3" }
   },
   {
+    "match": 14,
+    "grupa": "H",
+    "datum": "15.6.",
+    "vrijeme": "18:00",
+    "tim1": "ŠPANJOLSKA",
+    "tim2": "ZELENORTSKI OTOCI",
+    "tomek": { "ishod": "1", "rezultat": "4:0" },
+    "damir": { "ishod": "1", "rezultat": "3:0" },
+    "julio": { "ishod": "1", "rezultat": "6:0" },
+    "tata": { "ishod": "1", "rezultat": "4:0" },
+    "filip": { "ishod": "1", "rezultat": "1:0" }
+  },
+  {
+    "match": 15,
     "grupa": "G",
     "datum": "16.6.",
+    "vrijeme": "3:00",
     "tim1": "IRAN",
     "tim2": "NOVI ZELAND",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    },
-    "julijo": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    },
-    "tata": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    }
+    "tomek": { "ishod": "1", "rezultat": "1:0" },
+    "damir": { "ishod": "1", "rezultat": "2:0" },
+    "julio": { "ishod": "X", "rezultat": "0:0" },
+    "tata": { "ishod": "X", "rezultat": "1:1" },
+    "filip": { "ishod": "1", "rezultat": "1:0" }
   },
   {
+    "match": 16,
+    "grupa": "G",
+    "datum": "15.6.",
+    "vrijeme": "21:00",
+    "tim1": "BELGIJA",
+    "tim2": "EGIPAT",
+    "tomek": { "ishod": "1", "rezultat": "2:0" },
+    "damir": { "ishod": "X", "rezultat": "1:1" },
+    "julio": { "ishod": "1", "rezultat": "2:1" },
+    "tata": { "ishod": "1", "rezultat": "2:0" },
+    "filip": { "ishod": "2", "rezultat": "0:1" }
+  },
+  {
+    "match": 17,
     "grupa": "I",
     "datum": "16.6.",
+    "vrijeme": "21:00",
     "tim1": "FRANCUSKA",
     "tim2": "SENEGAL",
-    "tomek": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "damir": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "2:1"
-    }
+    "tomek": { "ishod": "X", "rezultat": "1:1" },
+    "damir": { "ishod": "X", "rezultat": "0:0" },
+    "julio": { "ishod": "1", "rezultat": "2:0" },
+    "tata": { "ishod": "1", "rezultat": "2:1" },
+    "filip": { "ishod": "X", "rezultat": "0:0" }
   },
   {
+    "match": 18,
     "grupa": "I",
     "datum": "17.6.",
+    "vrijeme": "0:00",
     "tim1": "IRAK",
     "tim2": "NORVEŠKA",
-    "tomek": {
-      "ishod": "2",
-      "rezultat": "2:4"
-    },
-    "damir": {
-      "ishod": "2",
-      "rezultat": "1:3"
-    },
-    "julijo": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    },
-    "tata": {
-      "ishod": "2",
-      "rezultat": "0:2"
-    }
+    "tomek": { "ishod": "2", "rezultat": "2:4" },
+    "damir": { "ishod": "2", "rezultat": "1:3" },
+    "julio": { "ishod": "X", "rezultat": "0:0" },
+    "tata": { "ishod": "2", "rezultat": "0:2" },
+    "filip": { "ishod": "2", "rezultat": "1:5" }
   },
   {
+    "match": 19,
     "grupa": "J",
     "datum": "17.6.",
+    "vrijeme": "3:00",
     "tim1": "ARGENTINA",
     "tim2": "ALŽIR",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    },
-    "damir": {
-      "ishod": "X",
-      "rezultat": "2:2"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "3:0"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    }
+    "tomek": { "ishod": "1", "rezultat": "1:0" },
+    "damir": { "ishod": "X", "rezultat": "2:2" },
+    "julio": { "ishod": "1", "rezultat": "3:0" },
+    "tata": { "ishod": "1", "rezultat": "2:0" },
+    "filip": { "ishod": "1", "rezultat": "2:0" }
   },
   {
+    "match": 20,
     "grupa": "J",
     "datum": "17.6.",
+    "vrijeme": "6:00",
     "tim1": "AUSTRIJA",
     "tim2": "JORDAN",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "3:0"
-    },
-    "julijo": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "3:0"
-    }
+    "tomek": { "ishod": "1", "rezultat": "1:0" },
+    "damir": { "ishod": "1", "rezultat": "3:0" },
+    "julio": { "ishod": "X", "rezultat": "0:0" },
+    "tata": { "ishod": "1", "rezultat": "3:0" },
+    "filip": { "ishod": "1", "rezultat": "2:1" }
   },
   {
-    "grupa": "K",
-    "datum": "17.6.",
-    "tim1": "PORTUGAL",
-    "tim2": "DR KONGO",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "3:0"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "3:1"
-    }
-  },
-  {
+    "match": 21,
     "grupa": "L",
     "datum": "17.6.",
+    "vrijeme": "22:00",
     "tim1": "ENGLESKA",
     "tim2": "HRVATSKA",
-    "tomek": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    },
-    "tata": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    }
+    "tomek": { "ishod": "X", "rezultat": "1:1" },
+    "damir": { "ishod": "1", "rezultat": "2:0" },
+    "julio": { "ishod": "1", "rezultat": "1:0" },
+    "tata": { "ishod": "X", "rezultat": "1:1" },
+    "filip": { "ishod": "1", "rezultat": "3:1" }
   },
   {
+    "match": 22,
     "grupa": "L",
     "datum": "18.6.",
+    "vrijeme": "1:00",
     "tim1": "GANA",
     "tim2": "PANAMA",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "2:1"
-    },
-    "damir": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "julijo": {
-      "ishod": "2",
-      "rezultat": "1:3"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    }
+    "tomek": { "ishod": "1", "rezultat": "2:0" },
+    "damir": { "ishod": "1", "rezultat": "3:1" },
+    "julio": { "ishod": "1", "rezultat": "1:0" },
+    "tata": { "ishod": "X", "rezultat": "1:1" },
+    "filip": { "ishod": "X", "rezultat": "2:2" }
   },
   {
+    "match": 23,
     "grupa": "K",
     "datum": "17.6.",
+    "vrijeme": "19:00",
+    "tim1": "PORTUGAL",
+    "tim2": "DR KONGO",
+    "tomek": { "ishod": "1", "rezultat": "2:0" },
+    "damir": { "ishod": "1", "rezultat": "1:0" },
+    "julio": { "ishod": "1", "rezultat": "3:0" },
+    "tata": { "ishod": "1", "rezultat": "3:1" },
+    "filip": { "ishod": "1", "rezultat": "3:1" }
+  },
+  {
+    "match": 24,
+    "grupa": "K",
+    "datum": "17.6.",
+    "vrijeme": "19:00",
     "tim1": "UZBEKISTAN",
     "tim2": "KOLUMBIJA",
-    "tomek": {
-      "ishod": "2",
-      "rezultat": "0:3"
-    },
-    "damir": {
-      "ishod": "2",
-      "rezultat": "0:2"
-    },
-    "julijo": {
-      "ishod": "2",
-      "rezultat": "1:3"
-    },
-    "tata": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    }
+    "tomek": { "ishod": "2", "rezultat": "0:3" },
+    "damir": { "ishod": "2", "rezultat": "1:3" },
+    "julio": { "ishod": "2", "rezultat": "0:2" },
+    "tata": { "ishod": "2", "rezultat": "0:2" },
+    "filip": { "ishod": "2", "rezultat": "0:1" }
   },
   {
+    "match": 25,
     "grupa": "A",
     "datum": "18.6.",
+    "vrijeme": "18:00",
     "tim1": "ČEŠKA",
     "tim2": "JUŽNA AFRIKA",
-    "tomek": {
-      "ishod": "X",
-      "rezultat": "2:2"
-    },
-    "damir": {
-      "ishod": "2",
-      "rezultat": "0:1"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    },
-    "tata": {
-      "ishod": "2",
-      "rezultat": "1:2"
-    }
+    "tomek": { "ishod": "1", "rezultat": "2:0" },
+    "damir": { "ishod": "1", "rezultat": "3:0" },
+    "julio": { "ishod": "1", "rezultat": "2:0" },
+    "tata": { "ishod": "1", "rezultat": "2:1" },
+    "filip": { "ishod": "1", "rezultat": "3:0" }
   },
   {
+    "match": 26,
     "grupa": "B",
     "datum": "18.6.",
+    "vrijeme": "21:00",
     "tim1": "ŠVICARSKA",
     "tim2": "BIH",
-    "tomek": {
-      "ishod": "2",
-      "rezultat": "0:1"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "3:1"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "3:1"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    }
+    "tomek": { "ishod": "1", "rezultat": "2:0" },
+    "damir": { "ishod": "1", "rezultat": "2:1" },
+    "julio": { "ishod": "1", "rezultat": "2:1" },
+    "tata": { "ishod": "1", "rezultat": "2:0" },
+    "filip": { "ishod": "1", "rezultat": "3:2" }
   },
   {
+    "match": 27,
     "grupa": "B",
     "datum": "19.6.",
+    "vrijeme": "0:00",
     "tim1": "KANADA",
     "tim2": "KATAR",
-    "tomek": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    }
+    "tomek": { "ishod": "1", "rezultat": "3:0" },
+    "damir": { "ishod": "1", "rezultat": "2:0" },
+    "julio": { "ishod": "1", "rezultat": "3:0" },
+    "tata": { "ishod": "1", "rezultat": "3:0" },
+    "filip": { "ishod": "1", "rezultat": "4:1" }
   },
   {
+    "match": 28,
     "grupa": "A",
     "datum": "19.6.",
+    "vrijeme": "3:00",
     "tim1": "MEKSIKO",
     "tim2": "JUŽNA KOREJA",
-    "tomek": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "damir": {
-      "ishod": "X",
-      "rezultat": "2:2"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "2:1"
-    },
-    "tata": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    }
+    "tomek": { "ishod": "1", "rezultat": "2:1" },
+    "damir": { "ishod": "1", "rezultat": "2:0" },
+    "julio": { "ishod": "1", "rezultat": "2:0" },
+    "tata": { "ishod": "1", "rezultat": "2:1" },
+    "filip": { "ishod": "1", "rezultat": "1:0" }
   },
   {
-    "grupa": "D",
-    "datum": "19.6.",
-    "tim1": "USA",
-    "tim2": "AUSTRALIJA",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "2:1"
-    },
-    "julijo": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "2:1"
-    }
-  },
-  {
+    "match": 29,
     "grupa": "C",
     "datum": "20.6.",
-    "tim1": "ŠKOTSKA",
-    "tim2": "MAROKO",
-    "tomek": {
-      "ishod": "2",
-      "rezultat": "1:2"
-    },
-    "damir": {
-      "ishod": "2",
-      "rezultat": "1:3"
-    },
-    "julijo": {
-      "ishod": "2",
-      "rezultat": "0:2"
-    },
-    "tata": {
-      "ishod": "2",
-      "rezultat": "0:1"
-    }
-  },
-  {
-    "grupa": "C",
-    "datum": "20.6.",
+    "vrijeme": "2:30",
     "tim1": "BRAZIL",
     "tim2": "HAITI",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "5:1"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "5:0"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "3:1"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "4:0"
-    }
+    "tomek": { "ishod": "1", "rezultat": "3:0" },
+    "damir": { "ishod": "1", "rezultat": "3:1" },
+    "julio": { "ishod": "1", "rezultat": "4:0" },
+    "tata": { "ishod": "1", "rezultat": "4:0" },
+    "filip": { "ishod": "1", "rezultat": "2:0" }
   },
   {
+    "match": 30,
+    "grupa": "C",
+    "datum": "20.6.",
+    "vrijeme": "0:00",
+    "tim1": "ŠKOTSKA",
+    "tim2": "MAROKO",
+    "tomek": { "ishod": "1", "rezultat": "1:0" },
+    "damir": { "ishod": "2", "rezultat": "1:2" },
+    "julio": { "ishod": "X", "rezultat": "0:0" },
+    "tata": { "ishod": "2", "rezultat": "0:1" },
+    "filip": { "ishod": "2", "rezultat": "0:3" }
+  },
+  {
+    "match": 31,
     "grupa": "D",
     "datum": "20.6.",
+    "vrijeme": "5:00",
     "tim1": "TURSKA",
     "tim2": "PARAGVAJ",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    },
-    "damir": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    },
-    "julijo": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "tata": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    }
+    "tomek": { "ishod": "1", "rezultat": "2:1" },
+    "damir": { "ishod": "1", "rezultat": "2:0" },
+    "julio": { "ishod": "X", "rezultat": "1:1" },
+    "tata": { "ishod": "X", "rezultat": "1:1" },
+    "filip": { "ishod": "X", "rezultat": "1:1" }
   },
   {
-    "grupa": "F",
-    "datum": "20.6.",
-    "tim1": "NIZOZEMSKA",
-    "tim2": "ŠVEDSKA",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "2:1"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "2:1"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "2:1"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "3:0"
-    }
+    "match": 32,
+    "grupa": "D",
+    "datum": "19.6.",
+    "vrijeme": "21:00",
+    "tim1": "USA",
+    "tim2": "AUSTRALIJA",
+    "tomek": { "ishod": "1", "rezultat": "2:0" },
+    "damir": { "ishod": "1", "rezultat": "3:1" },
+    "julio": { "ishod": "1", "rezultat": "2:0" },
+    "tata": { "ishod": "1", "rezultat": "2:1" },
+    "filip": { "ishod": "1", "rezultat": "2:1" }
   },
   {
+    "match": 33,
     "grupa": "E",
     "datum": "20.6.",
+    "vrijeme": "22:00",
     "tim1": "NJEMAČKA",
     "tim2": "OBALA BJELOKOSTI",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "3:2"
-    },
-    "damir": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "julijo": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "tata": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    }
+    "tomek": { "ishod": "1", "rezultat": "3:0" },
+    "damir": { "ishod": "1", "rezultat": "3:0" },
+    "julio": { "ishod": "1", "rezultat": "3:0" },
+    "tata": { "ishod": "1", "rezultat": "3:1" },
+    "filip": { "ishod": "1", "rezultat": "7:0" }
   },
   {
+    "match": 34,
     "grupa": "E",
     "datum": "21.6.",
+    "vrijeme": "2:00",
     "tim1": "EKVADOR",
     "tim2": "CURACAO",
-    "tomek": {
-      "ishod": "X",
-      "rezultat": "2:2"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    },
-    "tata": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    }
+    "tomek": { "ishod": "1", "rezultat": "3:0" },
+    "damir": { "ishod": "1", "rezultat": "3:1" },
+    "julio": { "ishod": "1", "rezultat": "2:0" },
+    "tata": { "ishod": "1", "rezultat": "3:0" },
+    "filip": { "ishod": "1", "rezultat": "4:0" }
   },
   {
+    "match": 35,
+    "grupa": "F",
+    "datum": "20.6.",
+    "vrijeme": "19:00",
+    "tim1": "NIZOZEMSKA",
+    "tim2": "ŠVEDSKA",
+    "tomek": { "ishod": "1", "rezultat": "2:1" },
+    "damir": { "ishod": "1", "rezultat": "3:1" },
+    "julio": { "ishod": "1", "rezultat": "2:0" },
+    "tata": { "ishod": "1", "rezultat": "2:1" },
+    "filip": { "ishod": "1", "rezultat": "4:3" }
+  },
+  {
+    "match": 36,
     "grupa": "F",
     "datum": "21.6.",
+    "vrijeme": "6:00",
     "tim1": "TUNIS",
     "tim2": "JAPAN",
-    "tomek": {
-      "ishod": "2",
-      "rezultat": "0:1"
-    },
-    "damir": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "julijo": {
-      "ishod": "2",
-      "rezultat": "1:2"
-    },
-    "tata": {
-      "ishod": "2",
-      "rezultat": "1:2"
-    }
+    "tomek": { "ishod": "X", "rezultat": "0:0" },
+    "damir": { "ishod": "2", "rezultat": "0:1" },
+    "julio": { "ishod": "2", "rezultat": "0:2" },
+    "tata": { "ishod": "2", "rezultat": "0:1" },
+    "filip": { "ishod": "2", "rezultat": "0:1" }
   },
   {
-    "grupa": "H",
-    "datum": "21.6.",
-    "tim1": "ŠPANJOLSKA",
-    "tim2": "SAUDIJSKA ARABIJA",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "4:0"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "4:1"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    }
-  },
-  {
-    "grupa": "G",
-    "datum": "21.6.",
-    "tim1": "BELGIJA",
-    "tim2": "IRAN",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "3:1"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    }
-  },
-  {
+    "match": 37,
     "grupa": "H",
     "datum": "22.6.",
+    "vrijeme": "0:00",
     "tim1": "URUGVAJ",
     "tim2": "ZELENORTSKI OTOCI",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "3:0"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "2:1"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "3:0"
-    }
+    "tomek": { "ishod": "1", "rezultat": "3:0" },
+    "damir": { "ishod": "1", "rezultat": "2:0" },
+    "julio": { "ishod": "1", "rezultat": "2:0" },
+    "tata": { "ishod": "1", "rezultat": "3:0" },
+    "filip": { "ishod": "2", "rezultat": "1:2" }
   },
   {
+    "match": 38,
+    "grupa": "H",
+    "datum": "21.6.",
+    "vrijeme": "18:00",
+    "tim1": "ŠPANJOLSKA",
+    "tim2": "SAUDIJSKA ARABIJA",
+    "tomek": { "ishod": "1", "rezultat": "3:0" },
+    "damir": { "ishod": "1", "rezultat": "3:0" },
+    "julio": { "ishod": "1", "rezultat": "3:0" },
+    "tata": { "ishod": "1", "rezultat": "3:0" },
+    "filip": { "ishod": "1", "rezultat": "2:1" }
+  },
+  {
+    "match": 39,
+    "grupa": "G",
+    "datum": "21.6.",
+    "vrijeme": "21:00",
+    "tim1": "BELGIJA",
+    "tim2": "IRAN",
+    "tomek": { "ishod": "1", "rezultat": "2:0" },
+    "damir": { "ishod": "1", "rezultat": "2:0" },
+    "julio": { "ishod": "1", "rezultat": "2:0" },
+    "tata": { "ishod": "1", "rezultat": "2:0" },
+    "filip": { "ishod": "1", "rezultat": "3:1" }
+  },
+  {
+    "match": 40,
     "grupa": "G",
     "datum": "22.6.",
+    "vrijeme": "3:00",
     "tim1": "NOVI ZELAND",
     "tim2": "EGIPAT",
-    "tomek": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "damir": {
-      "ishod": "2",
-      "rezultat": "0:2"
-    },
-    "julijo": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "tata": {
-      "ishod": "2",
-      "rezultat": "0:2"
-    }
+    "tomek": { "ishod": "2", "rezultat": "0:2" },
+    "damir": { "ishod": "2", "rezultat": "1:2" },
+    "julio": { "ishod": "2", "rezultat": "0:2" },
+    "tata": { "ishod": "2", "rezultat": "0:2" },
+    "filip": { "ishod": "2", "rezultat": "2:3" }
   },
   {
-    "grupa": "J",
-    "datum": "22.6.",
-    "tim1": "ARGENTINA",
-    "tim2": "AUSTRIJA",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "2:1"
-    },
-    "damir": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "3:0"
-    },
-    "tata": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    }
-  },
-  {
-    "grupa": "I",
-    "datum": "22.6.",
-    "tim1": "FRANCUSKA",
-    "tim2": "IRAK",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "3:0"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    }
-  },
-  {
+    "match": 41,
     "grupa": "I",
     "datum": "23.6.",
+    "vrijeme": "2:00",
     "tim1": "NORVEŠKA",
     "tim2": "SENEGAL",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "4:0"
-    },
-    "damir": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "julijo": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    },
-    "tata": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    }
+    "tomek": { "ishod": "1", "rezultat": "1:0" },
+    "damir": { "ishod": "1", "rezultat": "2:0" },
+    "julio": { "ishod": "1", "rezultat": "2:0" },
+    "tata": { "ishod": "X", "rezultat": "1:1" },
+    "filip": { "ishod": "X", "rezultat": "1:1" }
   },
   {
+    "match": 42,
+    "grupa": "I",
+    "datum": "22.6.",
+    "vrijeme": "23:00",
+    "tim1": "FRANCUSKA",
+    "tim2": "IRAK",
+    "tomek": { "ishod": "1", "rezultat": "3:0" },
+    "damir": { "ishod": "1", "rezultat": "3:0" },
+    "julio": { "ishod": "1", "rezultat": "2:0" },
+    "tata": { "ishod": "1", "rezultat": "2:0" },
+    "filip": { "ishod": "1", "rezultat": "2:0" }
+  },
+  {
+    "match": 43,
+    "grupa": "J",
+    "datum": "22.6.",
+    "vrijeme": "19:00",
+    "tim1": "ARGENTINA",
+    "tim2": "AUSTRIJA",
+    "tomek": { "ishod": "1", "rezultat": "2:0" },
+    "damir": { "ishod": "1", "rezultat": "2:1" },
+    "julio": { "ishod": "1", "rezultat": "2:0" },
+    "tata": { "ishod": "1", "rezultat": "2:0" },
+    "filip": { "ishod": "X", "rezultat": "0:0" }
+  },
+  {
+    "match": 44,
     "grupa": "J",
     "datum": "23.6.",
+    "vrijeme": "5:00",
     "tim1": "JORDAN",
     "tim2": "ALŽIR",
-    "tomek": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "damir": {
-      "ishod": "2",
-      "rezultat": "1:3"
-    },
-    "julijo": {
-      "ishod": "2",
-      "rezultat": "1:0"
-    },
-    "tata": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    }
+    "tomek": { "ishod": "2", "rezultat": "0:2" },
+    "damir": { "ishod": "2", "rezultat": "0:1" },
+    "julio": { "ishod": "2", "rezultat": "0:2" },
+    "tata": { "ishod": "2", "rezultat": "0:2" },
+    "filip": { "ishod": "2", "rezultat": "0:3" }
   },
   {
-    "grupa": "K",
-    "datum": "23.6.",
-    "tim1": "PORTUGAL",
-    "tim2": "UZBEKISTAN",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "3:0"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "3:1"
-    }
-  },
-  {
+    "match": 45,
     "grupa": "L",
     "datum": "23.6.",
+    "vrijeme": "22:00",
     "tim1": "ENGLESKA",
     "tim2": "GANA",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "3:0"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    },
-    "tata": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    }
+    "tomek": { "ishod": "1", "rezultat": "2:0" },
+    "damir": { "ishod": "1", "rezultat": "2:1" },
+    "julio": { "ishod": "1", "rezultat": "2:0" },
+    "tata": { "ishod": "1", "rezultat": "2:0" },
+    "filip": { "ishod": "X", "rezultat": "1:1" }
   },
   {
+    "match": 46,
     "grupa": "L",
     "datum": "24.6.",
+    "vrijeme": "1:00",
     "tim1": "PANAMA",
     "tim2": "HRVATSKA",
-    "tomek": {
-      "ishod": "2",
-      "rezultat": "1:3"
-    },
-    "damir": {
-      "ishod": "2",
-      "rezultat": "1:3"
-    },
-    "julijo": {
-      "ishod": "2",
-      "rezultat": "1:2"
-    },
-    "tata": {
-      "ishod": "2",
-      "rezultat": "1:3"
-    }
+    "tomek": { "ishod": "2", "rezultat": "0:2" },
+    "damir": { "ishod": "2", "rezultat": "0:3" },
+    "julio": { "ishod": "2", "rezultat": "0:2" },
+    "tata": { "ishod": "2", "rezultat": "0:3" },
+    "filip": { "ishod": "2", "rezultat": "0:3" }
   },
   {
+    "match": 47,
+    "grupa": "K",
+    "datum": "23.6.",
+    "vrijeme": "19:00",
+    "tim1": "PORTUGAL",
+    "tim2": "UZBEKISTAN",
+    "tomek": { "ishod": "1", "rezultat": "3:0" },
+    "damir": { "ishod": "1", "rezultat": "3:0" },
+    "julio": { "ishod": "1", "rezultat": "3:0" },
+    "tata": { "ishod": "1", "rezultat": "4:0" },
+    "filip": { "ishod": "1", "rezultat": "4:0" }
+  },
+  {
+    "match": 48,
     "grupa": "K",
     "datum": "24.6.",
+    "vrijeme": "4:00",
     "tim1": "KOLUMBIJA",
     "tim2": "DR KONGO",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "3:0"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "4:0"
-    },
-    "tata": {
-      "ishod": "2",
-      "rezultat": "0:1"
-    }
+    "tomek": { "ishod": "1", "rezultat": "2:0" },
+    "damir": { "ishod": "1", "rezultat": "2:0" },
+    "julio": { "ishod": "1", "rezultat": "2:0" },
+    "tata": { "ishod": "1", "rezultat": "2:1" },
+    "filip": { "ishod": "1", "rezultat": "2:0" }
   },
   {
-    "grupa": "B",
-    "datum": "24.6.",
-    "tim1": "ŠVICARSKA",
-    "tim2": "KANADA",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "2:1"
-    },
-    "damir": {
-      "ishod": "X",
-      "rezultat": "2:2"
-    },
-    "julijo": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    }
-  },
-  {
-    "grupa": "B",
-    "datum": "24.6.",
-    "tim1": "BIH",
-    "tim2": "KATAR",
-    "tomek": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "damir": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "2:1"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "2:1"
-    }
-  },
-  {
+    "match": 49,
     "grupa": "C",
     "datum": "25.6.",
+    "vrijeme": "0:00",
     "tim1": "ŠKOTSKA",
     "tim2": "BRAZIL",
-    "tomek": {
-      "ishod": "2",
-      "rezultat": "0:1"
-    },
-    "damir": {
-      "ishod": "2",
-      "rezultat": "1:5"
-    },
-    "julijo": {
-      "ishod": "2",
-      "rezultat": "0:1"
-    },
-    "tata": {
-      "ishod": "2",
-      "rezultat": "1:2"
-    }
+    "tomek": { "ishod": "2", "rezultat": "0:1" },
+    "damir": { "ishod": "2", "rezultat": "1:5" },
+    "julio": { "ishod": "2", "rezultat": "0:1" },
+    "tata": { "ishod": "2", "rezultat": "1:2" },
+    "filip": { "ishod": "1", "rezultat": "2:1" }
   },
   {
+    "match": 50,
     "grupa": "C",
     "datum": "25.6.",
+    "vrijeme": "0:00",
     "tim1": "MAROKO",
     "tim2": "HAITI",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "4:0"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "3:0"
-    }
+    "tomek": { "ishod": "1", "rezultat": "1:0" },
+    "damir": { "ishod": "1", "rezultat": "4:0" },
+    "julio": { "ishod": "1", "rezultat": "2:0" },
+    "tata": { "ishod": "1", "rezultat": "3:0" },
+    "filip": { "ishod": "1", "rezultat": "3:0" }
   },
   {
+    "match": 51,
+    "grupa": "B",
+    "datum": "24.6.",
+    "vrijeme": "21:00",
+    "tim1": "ŠVICARSKA",
+    "tim2": "KANADA",
+    "tomek": { "ishod": "1", "rezultat": "2:1" },
+    "damir": { "ishod": "1", "rezultat": "1:0" },
+    "julio": { "ishod": "1", "rezultat": "1:0" },
+    "tata": { "ishod": "X", "rezultat": "1:1" },
+    "filip": { "ishod": "2", "rezultat": "1:3" }
+  },
+  {
+    "match": 52,
+    "grupa": "B",
+    "datum": "24.6.",
+    "vrijeme": "21:00",
+    "tim1": "BIH",
+    "tim2": "KATAR",
+    "tomek": { "ishod": "1", "rezultat": "2:0" },
+    "damir": { "ishod": "1", "rezultat": "2:0" },
+    "julio": { "ishod": "1", "rezultat": "2:1" },
+    "tata": { "ishod": "1", "rezultat": "2:0" },
+    "filip": { "ishod": "1", "rezultat": "1:0" }
+  },
+  {
+    "match": 53,
     "grupa": "A",
     "datum": "25.6.",
+    "vrijeme": "3:00",
     "tim1": "ČEŠKA",
     "tim2": "MEKSIKO",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    },
-    "damir": {
-      "ishod": "2",
-      "rezultat": "1:2"
-    },
-    "julijo": {
-      "ishod": "2",
-      "rezultat": "1:2"
-    },
-    "tata": {
-      "ishod": "2",
-      "rezultat": "0:2"
-    }
+    "tomek": { "ishod": "1", "rezultat": "1:0" },
+    "damir": { "ishod": "2", "rezultat": "1:2" },
+    "julio": { "ishod": "2", "rezultat": "1:2" },
+    "tata": { "ishod": "2", "rezultat": "0:2" },
+    "filip": { "ishod": "2", "rezultat": "0:1" }
   },
   {
+    "match": 54,
     "grupa": "A",
     "datum": "25.6.",
+    "vrijeme": "3:00",
     "tim1": "JUŽNA AFRIKA",
     "tim2": "JUŽNA KOREJA",
-    "tomek": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "damir": {
-      "ishod": "2",
-      "rezultat": "1:3"
-    },
-    "julijo": {
-      "ishod": "2",
-      "rezultat": "0:1"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    }
+    "tomek": { "ishod": "X", "rezultat": "1:1" },
+    "damir": { "ishod": "2", "rezultat": "1:3" },
+    "julio": { "ishod": "2", "rezultat": "0:1" },
+    "tata": { "ishod": "1", "rezultat": "1:0" },
+    "filip": { "ishod": "X", "rezultat": "2:2" }
   },
   {
+    "match": 55,
     "grupa": "E",
     "datum": "25.6.",
+    "vrijeme": "22:00",
     "tim1": "CURACAO",
     "tim2": "OBALA BJELOKOSTI",
-    "tomek": {
-      "ishod": "2",
-      "rezultat": "1:2"
-    },
-    "damir": {
-      "ishod": "2",
-      "rezultat": "1:2"
-    },
-    "julijo": {
-      "ishod": "2",
-      "rezultat": "0:1"
-    },
-    "tata": {
-      "ishod": "2",
-      "rezultat": "0:3"
-    }
+    "tomek": { "ishod": "2", "rezultat": "1:2" },
+    "damir": { "ishod": "2", "rezultat": "1:2" },
+    "julio": { "ishod": "2", "rezultat": "0:1" },
+    "tata": { "ishod": "2", "rezultat": "0:3" },
+    "filip": { "ishod": "X", "rezultat": "0:0" }
   },
   {
+    "match": 56,
     "grupa": "E",
     "datum": "25.6.",
+    "vrijeme": "22:00",
     "tim1": "EKVADOR",
     "tim2": "NJEMAČKA",
-    "tomek": {
-      "ishod": "2",
-      "rezultat": "0:4"
-    },
-    "damir": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "julijo": {
-      "ishod": "2",
-      "rezultat": "1:2"
-    },
-    "tata": {
-      "ishod": "2",
-      "rezultat": "0:1"
-    }
+    "tomek": { "ishod": "2", "rezultat": "0:4" },
+    "damir": { "ishod": "X", "rezultat": "1:1" },
+    "julio": { "ishod": "2", "rezultat": "1:2" },
+    "tata": { "ishod": "2", "rezultat": "0:1" },
+    "filip": { "ishod": "1", "rezultat": "2:0" }
   },
   {
+    "match": 57,
     "grupa": "F",
     "datum": "26.6.",
+    "vrijeme": "1:00",
     "tim1": "JAPAN",
     "tim2": "ŠVEDSKA",
-    "tomek": {
-      "ishod": "2",
-      "rezultat": "1:2"
-    },
-    "damir": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "julijo": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "2:1"
-    }
+    "tomek": { "ishod": "2", "rezultat": "1:2" },
+    "damir": { "ishod": "X", "rezultat": "1:1" },
+    "julio": { "ishod": "X", "rezultat": "1:1" },
+    "tata": { "ishod": "1", "rezultat": "2:1" },
+    "filip": { "ishod": "2", "rezultat": "3:4" }
   },
   {
+    "match": 58,
     "grupa": "F",
     "datum": "26.6.",
+    "vrijeme": "1:00",
     "tim1": "TUNIS",
     "tim2": "NIZOZEMSKA",
-    "tomek": {
-      "ishod": "2",
-      "rezultat": "1:3"
-    },
-    "damir": {
-      "ishod": "2",
-      "rezultat": "1:3"
-    },
-    "julijo": {
-      "ishod": "2",
-      "rezultat": "1:3"
-    },
-    "tata": {
-      "ishod": "2",
-      "rezultat": "1:3"
-    }
+    "tomek": { "ishod": "2", "rezultat": "1:3" },
+    "damir": { "ishod": "2", "rezultat": "1:3" },
+    "julio": { "ishod": "2", "rezultat": "1:3" },
+    "tata": { "ishod": "2", "rezultat": "1:3" },
+    "filip": { "ishod": "X", "rezultat": "1:1" }
   },
   {
+    "match": 59,
     "grupa": "D",
     "datum": "26.6.",
+    "vrijeme": "4:00",
     "tim1": "TURSKA",
     "tim2": "USA",
-    "tomek": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "damir": {
-      "ishod": "X",
-      "rezultat": "2:2"
-    },
-    "julijo": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "tata": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    }
+    "tomek": { "ishod": "X", "rezultat": "1:1" },
+    "damir": { "ishod": "X", "rezultat": "2:2" },
+    "julio": { "ishod": "X", "rezultat": "1:1" },
+    "tata": { "ishod": "X", "rezultat": "0:0" },
+    "filip": { "ishod": "2", "rezultat": "2:3" }
   },
   {
+    "match": 60,
     "grupa": "D",
     "datum": "26.6.",
+    "vrijeme": "4:00",
     "tim1": "PARAGVAJ",
     "tim2": "AUSTRALIJA",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    },
-    "damir": {
-      "ishod": "2",
-      "rezultat": "1:2"
-    },
-    "julijo": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    }
+    "tomek": { "ishod": "1", "rezultat": "2:0" },
+    "damir": { "ishod": "2", "rezultat": "1:2" },
+    "julio": { "ishod": "X", "rezultat": "0:0" },
+    "tata": { "ishod": "1", "rezultat": "1:0" },
+    "filip": { "ishod": "1", "rezultat": "3:0" }
   },
   {
+    "match": 61,
     "grupa": "I",
     "datum": "26.6.",
+    "vrijeme": "21:00",
     "tim1": "NORVEŠKA",
     "tim2": "FRANCUSKA",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "2:1"
-    },
-    "damir": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    },
-    "julijo": {
-      "ishod": "2",
-      "rezultat": "1:3"
-    },
-    "tata": {
-      "ishod": "X",
-      "rezultat": "2:2"
-    }
+    "tomek": { "ishod": "1", "rezultat": "2:1" },
+    "damir": { "ishod": "X", "rezultat": "0:0" },
+    "julio": { "ishod": "2", "rezultat": "1:3" },
+    "tata": { "ishod": "X", "rezultat": "2:2" },
+    "filip": { "ishod": "1", "rezultat": "2:1" }
   },
   {
+    "match": 62,
     "grupa": "I",
     "datum": "26.6.",
+    "vrijeme": "21:00",
     "tim1": "SENEGAL",
     "tim2": "IRAK",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "3:1"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "2:0"
-    }
+    "tomek": { "ishod": "1", "rezultat": "1:0" },
+    "damir": { "ishod": "1", "rezultat": "3:1" },
+    "julio": { "ishod": "1", "rezultat": "2:0" },
+    "tata": { "ishod": "1", "rezultat": "2:0" },
+    "filip": { "ishod": "2", "rezultat": "0:1" }
   },
   {
-    "grupa": "H",
-    "datum": "27.6.",
-    "tim1": "ZELENORTSKI OTOCI",
-    "tim2": "SAUDIJSKA ARABIJA",
-    "tomek": {
-      "ishod": "X",
-      "rezultat": "2:2"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "2:1"
-    },
-    "julijo": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    },
-    "tata": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    }
-  },
-  {
-    "grupa": "H",
-    "datum": "27.6.",
-    "tim1": "URUGVAJ",
-    "tim2": "ŠPANJOLSKA",
-    "tomek": {
-      "ishod": "2",
-      "rezultat": "1:2"
-    },
-    "damir": {
-      "ishod": "2",
-      "rezultat": "0:2"
-    },
-    "julijo": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "tata": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    }
-  },
-  {
+    "match": 63,
     "grupa": "G",
     "datum": "27.6.",
+    "vrijeme": "5:00",
     "tim1": "EGIPAT",
     "tim2": "IRAN",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "3:1"
-    },
-    "damir": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    }
+    "tomek": { "ishod": "1", "rezultat": "3:1" },
+    "damir": { "ishod": "X", "rezultat": "0:0" },
+    "julio": { "ishod": "1", "rezultat": "1:0" },
+    "tata": { "ishod": "1", "rezultat": "1:0" },
+    "filip": { "ishod": "X", "rezultat": "2:2" }
   },
   {
+    "match": 64,
     "grupa": "G",
     "datum": "27.6.",
+    "vrijeme": "5:00",
     "tim1": "NOVI ZELAND",
     "tim2": "BELGIJA",
-    "tomek": {
-      "ishod": "2",
-      "rezultat": "0:4"
-    },
-    "damir": {
-      "ishod": "2",
-      "rezultat": "0:2"
-    },
-    "julijo": {
-      "ishod": "2",
-      "rezultat": "0:1"
-    },
-    "tata": {
-      "ishod": "2",
-      "rezultat": "0:2"
-    }
+    "tomek": { "ishod": "2", "rezultat": "0:4" },
+    "damir": { "ishod": "2", "rezultat": "0:2" },
+    "julio": { "ishod": "2", "rezultat": "0:1" },
+    "tata": { "ishod": "2", "rezultat": "0:2" },
+    "filip": { "ishod": "2", "rezultat": "0:2" }
   },
   {
+    "match": 65,
+    "grupa": "H",
+    "datum": "27.6.",
+    "vrijeme": "2:00",
+    "tim1": "ZELENORTSKI OTOCI",
+    "tim2": "SAUDIJSKA ARABIJA",
+    "tomek": { "ishod": "X", "rezultat": "2:2" },
+    "damir": { "ishod": "1", "rezultat": "2:1" },
+    "julio": { "ishod": "X", "rezultat": "0:0" },
+    "tata": { "ishod": "X", "rezultat": "1:1" },
+    "filip": { "ishod": "1", "rezultat": "1:0" }
+  },
+  {
+    "match": 66,
+    "grupa": "H",
+    "datum": "27.6.",
+    "vrijeme": "2:00",
+    "tim1": "URUGVAJ",
+    "tim2": "ŠPANJOLSKA",
+    "tomek": { "ishod": "2", "rezultat": "1:2" },
+    "damir": { "ishod": "2", "rezultat": "0:2" },
+    "julio": { "ishod": "X", "rezultat": "1:1" },
+    "tata": { "ishod": "X", "rezultat": "1:1" },
+    "filip": { "ishod": "X", "rezultat": "1:1" }
+  },
+  {
+    "match": 67,
     "grupa": "L",
     "datum": "27.6.",
+    "vrijeme": "23:00",
     "tim1": "PANAMA",
     "tim2": "ENGLESKA",
-    "tomek": {
-      "ishod": "2",
-      "rezultat": "0:4"
-    },
-    "damir": {
-      "ishod": "2",
-      "rezultat": "0:2"
-    },
-    "julijo": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "tata": {
-      "ishod": "2",
-      "rezultat": "1:3"
-    }
+    "tomek": { "ishod": "2", "rezultat": "0:4" },
+    "damir": { "ishod": "2", "rezultat": "0:2" },
+    "julio": { "ishod": "X", "rezultat": "1:1" },
+    "tata": { "ishod": "2", "rezultat": "1:3" },
+    "filip": { "ishod": "2", "rezultat": "0:4" }
   },
   {
+    "match": 68,
     "grupa": "L",
     "datum": "27.6.",
+    "vrijeme": "23:00",
     "tim1": "HRVATSKA",
     "tim2": "GANA",
-    "tomek": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    },
-    "damir": {
-      "ishod": "X",
-      "rezultat": "2:2"
-    },
-    "julijo": {
-      "ishod": "1",
-      "rezultat": "2:1"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    }
+    "tomek": { "ishod": "1", "rezultat": "1:0" },
+    "damir": { "ishod": "X", "rezultat": "2:2" },
+    "julio": { "ishod": "1", "rezultat": "2:1" },
+    "tata": { "ishod": "1", "rezultat": "1:0" },
+    "filip": { "ishod": "1", "rezultat": "1:0" }
   },
   {
-    "grupa": "K",
-    "datum": "28.6.",
-    "tim1": "KOLUMBIJA",
-    "tim2": "PORTUGAL",
-    "tomek": {
-      "ishod": "2",
-      "rezultat": "2:3"
-    },
-    "damir": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    },
-    "julijo": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    },
-    "tata": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    }
-  },
-  {
-    "grupa": "K",
-    "datum": "28.6.",
-    "tim1": "DR KONGO",
-    "tim2": "UZBEKISTAN",
-    "tomek": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    },
-    "damir": {
-      "ishod": "1",
-      "rezultat": "3:3"
-    },
-    "julijo": {
-      "ishod": "2",
-      "rezultat": "2:0"
-    },
-    "tata": {
-      "ishod": "1",
-      "rezultat": "1:0"
-    }
-  },
-  {
+    "match": 69,
     "grupa": "J",
     "datum": "28.6.",
+    "vrijeme": "1:30",
     "tim1": "ALŽIR",
     "tim2": "AUSTRIJA",
-    "tomek": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    },
-    "damir": {
-      "ishod": "X",
-      "rezultat": "2:2"
-    },
-    "julijo": {
-      "ishod": "X",
-      "rezultat": "0:0"
-    },
-    "tata": {
-      "ishod": "X",
-      "rezultat": "1:1"
-    }
+    "tomek": { "ishod": "X", "rezultat": "0:0" },
+    "damir": { "ishod": "X", "rezultat": "2:2" },
+    "julio": { "ishod": "X", "rezultat": "0:0" },
+    "tata": { "ishod": "X", "rezultat": "1:1" },
+    "filip": { "ishod": "2", "rezultat": "0:2" }
   },
   {
+    "match": 70,
     "grupa": "J",
     "datum": "28.6.",
+    "vrijeme": "1:30",
     "tim1": "JORDAN",
     "tim2": "ARGENTINA",
-    "tomek": {
-      "ishod": "2",
-      "rezultat": "0:3"
-    },
-    "damir": {
-      "ishod": "2",
-      "rezultat": "2:4"
-    },
-    "julijo": {
-      "ishod": "2",
-      "rezultat": "0:4"
-    },
-    "tata": {
-      "ishod": "2",
-      "rezultat": "0:3"
-    }
+    "tomek": { "ishod": "2", "rezultat": "0:3" },
+    "damir": { "ishod": "2", "rezultat": "2:4" },
+    "julio": { "ishod": "2", "rezultat": "0:4" },
+    "tata": { "ishod": "2", "rezultat": "0:3" },
+    "filip": { "ishod": "2", "rezultat": "1:3" }
+  },
+  {
+    "match": 71,
+    "grupa": "K",
+    "datum": "28.6.",
+    "vrijeme": "1:30",
+    "tim1": "KOLUMBIJA",
+    "tim2": "PORTUGAL",
+    "tomek": { "ishod": "2", "rezultat": "2:3" },
+    "damir": { "ishod": "X", "rezultat": "1:1" },
+    "julio": { "ishod": "X", "rezultat": "0:0" },
+    "tata": { "ishod": "X", "rezultat": "0:0" },
+    "filip": { "ishod": "X", "rezultat": "3:3" }
+  },
+  {
+    "match": 72,
+    "grupa": "K",
+    "datum": "28.6.",
+    "vrijeme": "1:30",
+    "tim1": "DR KONGO",
+    "tim2": "UZBEKISTAN",
+    "tomek": { "ishod": "X", "rezultat": "0:0" },
+    "damir": { "ishod": "1", "rezultat": "3:3" },
+    "julio": { "ishod": "2", "rezultat": "2:0" },
+    "tata": { "ishod": "1", "rezultat": "1:0" },
+    "filip": { "ishod": "X", "rezultat": "0:0" }
   }
 ]
