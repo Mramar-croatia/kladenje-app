@@ -88,6 +88,14 @@ export function prettyDate(datum) {
   return `${m[1]}. ${month}`;
 }
 
+// "21:00" -> 1260. Minutes since midnight, for sorting matches by kickoff
+// within a day (literal clock order, 0–23). Missing/invalid times sort last.
+export function timeMinutes(vrijeme) {
+  const m = /^(\d{1,2}):(\d{2})$/.exec(vrijeme || '');
+  if (!m) return Infinity;
+  return parseInt(m[1], 10) * 60 + parseInt(m[2], 10);
+}
+
 // "4:00" -> "04:00" — zero-pad the hour so kickoff times line up.
 export function prettyTime(vrijeme) {
   const m = /^(\d{1,2}):(\d{2})$/.exec(vrijeme || '');

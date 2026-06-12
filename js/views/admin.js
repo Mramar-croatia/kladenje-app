@@ -13,7 +13,7 @@ import {
   saveBetOverride,
   AuthError,
 } from '../api.js';
-import { el, esc, prettyDate, prettyTime } from '../ui.js';
+import { el, esc, prettyDate, prettyTime, timeMinutes } from '../ui.js';
 
 // Persisted while in the session.
 const state = { mode: 'rezultati', show: 'pending' }; // mode: 'rezultati' | 'uredi'
@@ -268,6 +268,10 @@ function groupByDate(items) {
     if (!byDate.has(it.match.datum)) byDate.set(it.match.datum, []);
     byDate.get(it.match.datum).push(it);
   });
+  // Within each day, order by kickoff time (0–23).
+  byDate.forEach((group) =>
+    group.sort((a, b) => timeMinutes(a.match.vrijeme) - timeMinutes(b.match.vrijeme))
+  );
   return byDate;
 }
 

@@ -4,7 +4,7 @@
 import { BETS } from '../data.js';
 import { PLAYERS, PLAYER_META } from '../config.js';
 import { scoreMatch, outcomeOf } from '../scoring.js';
-import { el, esc, icon, statusIcon, ishodPill, prettyDate, prettyTime } from '../ui.js';
+import { el, esc, icon, statusIcon, ishodPill, prettyDate, prettyTime, timeMinutes } from '../ui.js';
 
 // Filter state persists while the user is in the session.
 const filters = { status: 'all', grupa: 'all', q: '' };
@@ -113,6 +113,10 @@ export function renderMatches(results, rerender) {
     if (!byDate.has(it.match.datum)) byDate.set(it.match.datum, []);
     byDate.get(it.match.datum).push(it);
   });
+  // Within each day, order by kickoff time (0–23).
+  byDate.forEach((group) =>
+    group.sort((a, b) => timeMinutes(a.match.vrijeme) - timeMinutes(b.match.vrijeme))
+  );
 
   byDate.forEach((group, datum) => {
     wrap.appendChild(el('div', {
