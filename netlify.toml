@@ -11,3 +11,18 @@
   from = "/api/result"
   to = "/.netlify/functions/set-result"
   status = 200
+
+[[redirects]]
+  from = "/api/overrides"
+  to = "/.netlify/functions/get-overrides"
+  status = 200
+
+[[redirects]]
+  from = "/api/match-override"
+  to = "/.netlify/functions/set-match-override"
+  status = 200
+
+[[redirects]]
+  from = "/api/bet-override"
+  to = "/.netlify/functions/set-bet-override"
+  status = 200

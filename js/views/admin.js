@@ -1,13 +1,26 @@
-// "Unos rezultata" — admin-only. Enter or edit the actual score of any match.
-// Saved results can be corrected later, not just pending ones.
+// "Unos" — admin-only. Two modes:
+//   • Rezultati: enter/correct the actual score of any match.
+//   • Uredi: match-first editing of match info (date/time/teams/group)
+//     and each player's tip. Edits are stored server-side (overrides) and
+//     merged on top of the seed data, so no file editing or redeploy is needed.
 
 import { BETS } from '../data.js';
+import { PLAYERS, PLAYER_META } from '../config.js';
 import { outcomeOf } from '../scoring.js';
-import { saveResult, fetchResults, AuthError } from '../api.js';
-import { el, esc, prettyDate } from '../ui.js';
+import {
+  saveResult,
+  saveMatchOverride,
+  saveBetOverride,
+  AuthError,
+} from '../api.js';
+import { el, esc, prettyDate, prettyTime } from '../ui.js';
 
-const filters = { show: 'pending' }; // 'pending' | 'all'
+// Persisted while in the session.
+const state = { mode: 'rezultati', show: 'pending' }; // mode: 'rezultati' | 'uredi'
 
+// ---------------------------------------------------------------------------
+// Mode: Rezultati (enter the actual score)
+// ---------------------------------------------------------------------------
 function entryRow(match, idx, actual, onSaved, onAuthError) {
   const played = !!outcomeOf(actual);
   const [pg1, pg2] = played ? actual.split(':') : ['', ''];
@@ -61,49 +74,40 @@ function entryRow(match, idx, actual, onSaved, onAuthError) {
   return row;
 }
 
-export function renderAdmin(results, rerender, refreshResults, onAuthError) {
-  const wrap = el('div', { class: 'view view--admin' });
-
+function renderResults(wrap, results, rerender, refresh, onAuthError) {
   const total = BETS.length;
   const done = BETS.reduce((n, _m, idx) => (outcomeOf(results[String(idx)]) ? n + 1 : n), 0);
 
   const toolbar = el('div', { class: 'toolbar' });
   toolbar.innerHTML = `
     <div class="segmented">
-      <button data-show="pending" class="${filters.show === 'pending' ? 'active' : ''}">Neuneseni (${total - done})</button>
-      <button data-show="all" class="${filters.show === 'all' ? 'active' : ''}">Sve (${total})</button>
+      <button data-show="pending" class="${state.show === 'pending' ? 'active' : ''}">Neuneseni (${total - done})</button>
+      <button data-show="all" class="${state.show === 'all' ? 'active' : ''}">Sve (${total})</button>
     </div>
     <span class="toolbar-note">Rezultate možeš naknadno ispraviti.</span>`;
   toolbar.querySelectorAll('.segmented button').forEach((b) => {
     b.addEventListener('click', () => {
-      filters.show = b.dataset.show;
+      state.show = b.dataset.show;
       rerender();
     });
   });
   wrap.appendChild(toolbar);
 
-  // After a save: refresh results from server, then re-render the active view.
   const onSaved = async () => {
-    await refreshResults();
+    await refresh.refreshResults();
     setTimeout(rerender, 500);
   };
 
   const items = BETS
     .map((match, idx) => ({ match, idx }))
-    .filter(({ idx }) => filters.show === 'all' || !outcomeOf(results[String(idx)]));
+    .filter(({ idx }) => state.show === 'all' || !outcomeOf(results[String(idx)]));
 
   if (items.length === 0) {
     wrap.appendChild(el('div', { class: 'empty', text: 'Sve utakmice su unesene 🎉' }));
-    return wrap;
+    return;
   }
 
-  const byDate = new Map();
-  items.forEach((it) => {
-    if (!byDate.has(it.match.datum)) byDate.set(it.match.datum, []);
-    byDate.get(it.match.datum).push(it);
-  });
-
-  byDate.forEach((group, datum) => {
+  groupByDate(items).forEach((group, datum) => {
     wrap.appendChild(el('div', { class: 'date-divider', html: `<span>${esc(prettyDate(datum))}</span>` }));
     const list = el('div', { class: 'entry-list' });
     group.forEach(({ match, idx }) =>
@@ -111,6 +115,183 @@ export function renderAdmin(results, rerender, refreshResults, onAuthError) {
     );
     wrap.appendChild(list);
   });
+}
+
+// ---------------------------------------------------------------------------
+// Mode: Uredi (edit match info + player tips, match-first)
+// ---------------------------------------------------------------------------
+function flash(msg, ok, text) {
+  msg.className = 'entry-msg ' + (ok ? 'ok' : 'err');
+  msg.textContent = text;
+}
+
+// Editable form for one match's info (group/date/time/teams).
+function matchInfoForm(match, idx, onSaved, onAuthError) {
+  const box = el('div', { class: 'edit-section' });
+  box.innerHTML = `
+    <h4 class="edit-title">Podaci o utakmici</h4>
+    <div class="edit-grid">
+      <label>Grupa<input class="edit-input" data-f="grupa" value="${esc(match.grupa)}" /></label>
+      <label>Datum<input class="edit-input" data-f="datum" value="${esc(match.datum)}" placeholder="11.6." /></label>
+      <label>Vrijeme<input class="edit-input" data-f="vrijeme" value="${esc(match.vrijeme)}" placeholder="21:00" /></label>
+      <label>Domaćin<input class="edit-input" data-f="tim1" value="${esc(match.tim1)}" /></label>
+      <label>Gost<input class="edit-input" data-f="tim2" value="${esc(match.tim2)}" /></label>
+    </div>
+    <div class="edit-actions">
+      <button type="button" class="btn">Spremi podatke</button>
+      <span class="entry-msg"></span>
+    </div>`;
+
+  const btn = box.querySelector('button');
+  const msg = box.querySelector('.entry-msg');
+
+  btn.addEventListener('click', async () => {
+    const fields = {};
+    box.querySelectorAll('.edit-input').forEach((i) => (fields[i.dataset.f] = i.value.trim()));
+    if (!fields.tim1 || !fields.tim2) {
+      return flash(msg, false, 'Unesite oba tima.');
+    }
+    btn.disabled = true;
+    flash(msg, true, '…');
+    try {
+      await saveMatchOverride(idx, fields);
+      flash(msg, true, 'Spremljeno ✓');
+      await onSaved();
+    } catch (e) {
+      if (e instanceof AuthError) return onAuthError();
+      flash(msg, false, 'Greška: ' + e.message);
+      btn.disabled = false;
+    }
+  });
+
+  return box;
+}
+
+// One editable tip row for a single player.
+function tipRow(match, idx, player, onSaved, onAuthError) {
+  const meta = PLAYER_META[player];
+  const tip = match[player] || { ishod: '1', rezultat: '' };
+
+  const row = el('div', { class: 'tip-row' });
+  const opt = (v, label) =>
+    `<option value="${v}"${tip.ishod === v ? ' selected' : ''}>${label}</option>`;
+  row.innerHTML = `
+    <span class="tip-who" style="--c:${meta.color}">${esc(meta.name)}</span>
+    <select class="select tip-ishod" aria-label="Ishod">
+      ${opt('1', '1 (Domaćin)')}${opt('X', 'X (Neriješeno)')}${opt('2', '2 (Gost)')}
+    </select>
+    <input class="edit-input tip-score" value="${esc(tip.rezultat)}" placeholder="2:1" inputmode="numeric" aria-label="Rezultat tipa" />
+    <button type="button" class="btn btn--ghost">Spremi</button>
+    <span class="entry-msg"></span>`;
+
+  const sel = row.querySelector('.tip-ishod');
+  const score = row.querySelector('.tip-score');
+  const btn = row.querySelector('button');
+  const msg = row.querySelector('.entry-msg');
+
+  btn.addEventListener('click', async () => {
+    const ishod = sel.value;
+    const rezultat = score.value.trim();
+    if (!/^\d+:\d+$/.test(rezultat)) {
+      return flash(msg, false, 'Format: npr. 2:1');
+    }
+    btn.disabled = true;
+    flash(msg, true, '…');
+    try {
+      await saveBetOverride(idx, player, ishod, rezultat);
+      flash(msg, true, 'Spremljeno ✓');
+      await onSaved();
+    } catch (e) {
+      if (e instanceof AuthError) return onAuthError();
+      flash(msg, false, 'Greška: ' + e.message);
+      btn.disabled = false;
+    }
+  });
+
+  return row;
+}
+
+function editCard(match, idx, results, onSaved, onAuthError) {
+  const played = !!outcomeOf(results[String(idx)]);
+  const card = el('details', { class: 'edit-card' });
+
+  const summary = el('summary', { class: 'edit-summary' });
+  summary.innerHTML = `
+    <span class="chip chip--group">${esc(match.grupa)}</span>
+    <span class="entry-teams">${esc(match.tim1)} – ${esc(match.tim2)}</span>
+    ${match.vrijeme ? `<span class="chip chip--time">${esc(prettyTime(match.vrijeme))}</span>` : ''}
+    ${played ? '<span class="chip chip--date">odigrano</span>' : ''}`;
+  card.appendChild(summary);
+
+  const body = el('div', { class: 'edit-body' });
+  body.appendChild(matchInfoForm(match, idx, onSaved, onAuthError));
+
+  const tips = el('div', { class: 'edit-section' });
+  tips.appendChild(el('h4', { class: 'edit-title', text: 'Tipovi igrača' }));
+  PLAYERS.forEach((p) => tips.appendChild(tipRow(match, idx, p, onSaved, onAuthError)));
+  body.appendChild(tips);
+
+  card.appendChild(body);
+  return card;
+}
+
+function renderEdit(wrap, results, rerender, refresh, onAuthError) {
+  wrap.appendChild(el('div', {
+    class: 'toolbar',
+    html: '<span class="toolbar-note">Otvori utakmicu da urediš datum, vrijeme, timove i tipove igrača.</span>',
+  }));
+
+  // Re-fetch the merged overrides, then re-render so inputs show fresh values.
+  const onSaved = async () => {
+    await refresh.refreshOverrides();
+    setTimeout(rerender, 400);
+  };
+
+  const items = BETS.map((match, idx) => ({ match, idx }));
+
+  groupByDate(items).forEach((group, datum) => {
+    wrap.appendChild(el('div', { class: 'date-divider', html: `<span>${esc(prettyDate(datum))}</span>` }));
+    const list = el('div', { class: 'edit-list' });
+    group.forEach(({ match, idx }) =>
+      list.appendChild(editCard(match, idx, results, onSaved, onAuthError))
+    );
+    wrap.appendChild(list);
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Shared
+// ---------------------------------------------------------------------------
+function groupByDate(items) {
+  const byDate = new Map();
+  items.forEach((it) => {
+    if (!byDate.has(it.match.datum)) byDate.set(it.match.datum, []);
+    byDate.get(it.match.datum).push(it);
+  });
+  return byDate;
+}
+
+export function renderAdmin(results, rerender, refresh, onAuthError) {
+  const wrap = el('div', { class: 'view view--admin' });
+
+  // Top-level mode switch.
+  const modes = el('div', { class: 'segmented segmented--modes' });
+  modes.innerHTML = `
+    <button data-mode="rezultati" class="${state.mode === 'rezultati' ? 'active' : ''}">Rezultati</button>
+    <button data-mode="uredi" class="${state.mode === 'uredi' ? 'active' : ''}">Uredi utakmice</button>`;
+  modes.querySelectorAll('button').forEach((b) => {
+    b.addEventListener('click', () => {
+      state.mode = b.dataset.mode;
+      rerender();
+    });
+  });
+  wrap.appendChild(modes);
+
+  if (state.mode === 'uredi') {
+    renderEdit(wrap, results, rerender, refresh, onAuthError);
+  } else {
+    renderResults(wrap, results, rerender, refresh, onAuthError);
+  }
 
   return wrap;
 }

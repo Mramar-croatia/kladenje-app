@@ -1,7 +1,8 @@
 // App controller: auth flow, hash routing, view dispatch, data loading.
 
 import { isAdmin, getRole, roleForPassword, login, logout } from './auth.js';
-import { fetchResults, AuthError } from './api.js';
+import { fetchResults, fetchOverrides, AuthError } from './api.js';
+import { applyOverrides } from './overrides.js';
 import { renderStandings } from './views/standings.js';
 import { renderMatches } from './views/matches.js';
 import { renderPlayers, renderPlayerDetail } from './views/players.js';
@@ -88,7 +89,7 @@ function render() {
   } else if (tab === 'igraci') {
     node = param ? renderPlayerDetail(param, results) : renderPlayers(results);
   } else if (tab === 'unos' && isAdmin()) {
-    node = renderAdmin(results, render, refreshResults, handleAuthError);
+    node = renderAdmin(results, render, { refreshResults, refreshOverrides }, handleAuthError);
   } else {
     node = renderStandings(results);
   }
@@ -99,12 +100,17 @@ async function refreshResults() {
   results = await fetchResults();
 }
 
+// Load admin edits and merge them onto the seed predictions (in place).
+async function refreshOverrides() {
+  applyOverrides(await fetchOverrides());
+}
+
 // ---- Boot the authenticated app ----
 async function init() {
   showApp();
   $('content').innerHTML = '<div class="loading"><span class="spinner"></span>Učitavanje…</div>';
   try {
-    await refreshResults();
+    await Promise.all([refreshResults(), refreshOverrides()]);
   } catch (e) {
     if (e instanceof AuthError) return handleAuthError();
     $('content').innerHTML =
